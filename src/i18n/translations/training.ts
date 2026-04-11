@@ -162,6 +162,170 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       'Only counting requests made during structured teaching rather than throughout the day',
     ],
   },
+  'tact-1': {
+    criterionId: 'tact-1',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Choose 2 items your child loves and can already request (e.g., a favorite toy, a family member).',
+      },
+      {
+        stepNumber: 2,
+        instruction: 'Hold up the item and ask "What is this?" in a clear, enthusiastic voice.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'If your child does not answer, say the name yourself (e.g., "ball!") and wait for them to repeat it.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'When your child says the name, give enthusiastic praise and a small reward. Repeat with the second item.',
+      },
+    ],
+    fullGuide:
+      'Start with items your child already requests (mands), since these words are already in their vocabulary. The idea is to transfer from requesting to labeling: after the child asks for the ball and gets it, hold it up and ask "What is this?" The child already knows the word, so the leap to labeling is small. Use real objects first, not pictures. Keep sessions short (5-10 minutes) and playful. If the child does not respond after a few seconds, provide the word as a prompt and let them echo it. Gradually wait a bit longer before prompting, giving the child more time to answer independently. Practice in natural moments: during play, at mealtimes, while getting dressed. The goal is 2 different objects the child can name when shown.',
+    commonMistakes: [
+      'Using only flashcards or pictures instead of real, familiar objects',
+      'Saying the answer too quickly without giving the child time to respond',
+      'Practicing only during structured sessions rather than natural moments',
+      'Choosing items the child has never seen before instead of familiar favorites',
+    ],
+  },
+  'tact-2': {
+    criterionId: 'tact-2',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Pick 4 items your child knows well: mix favorites (teddy bear, mom) with familiar everyday things (cup, shoe).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Show one item at a time and ask "What is this?" Wait 3-5 seconds for a response.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'If the child needs help, say just the first sound of the word (e.g., "b..." for ball) instead of the full word.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Praise correct answers warmly. Alternate between items the child knows well and newer ones.',
+      },
+    ],
+    fullGuide:
+      'At this level, you are expanding from 2 to 4 labels. The strategy is to build one new label at a time alongside items the child already names confidently. Start each session with a known item to build confidence, then introduce the new one. Fade your prompts gradually: begin by saying the full word for the child to echo, then give only the first sound, then wait silently. This prompt-fading sequence (full word, first sound, independent) is key. Mix people, animals, and characters to keep it interesting. If the child struggles with a new item, pair it with the real object during play so the connection between word and thing becomes natural. Track which 4 labels your child can produce independently.',
+    commonMistakes: [
+      'Trying to teach all 4 new labels at once instead of adding one at a time',
+      'Not fading prompts gradually (jumping from full prompt to no prompt)',
+      'Testing only with pictures when the child learns better with real objects',
+      "Skipping practice with already-known items, which reduces the child's confidence",
+    ],
+  },
+  'tact-3': {
+    criterionId: 'tact-3',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Gather 6 everyday objects the child is not especially interested in (e.g., shoe, hat, spoon, cup, chair, book).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Use a reward system: give a token (sticker, chip) for each correct label. Collect tokens to earn a favorite item.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'After each correct label, briefly distract the child (clap, sing a line), then ask about the same object again.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Give 1 token for saying just the word, and 2 tokens for saying "This is a [word]" to encourage fuller answers.',
+      },
+    ],
+    fullGuide:
+      'This level is harder because the child needs to label objects they do not particularly want. Without natural motivation, you need an external reward system. Set up a token board: the child earns tokens (stickers, chips, stars) for each correct label and exchanges them for a favorite item or activity after a set number. Award 1 token for a single word ("spoon") and 2 tokens for a phrase ("This is a spoon") to encourage more complete language. Use the distraction method between trials: show the object, get the answer, give the token and praise, do a brief fun distraction (clap hands, sing a short line), then ask about the same object again. The child should answer correctly 3 times after distractions before the word is considered learned. Practice with real household objects the child encounters daily.',
+    commonMistakes: [
+      'Skipping non-preferred items and only practicing with things the child likes',
+      'Not using a token reward system, leading to low motivation for everyday objects',
+      'Moving on to new words before the child can consistently name the current ones after distractions',
+      'Forgetting to make the reward exchange motivating enough (tokens should lead to something the child really wants)',
+    ],
+  },
+  'tact-4': {
+    criterionId: 'tact-4',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Set up a 60-minute observation during a natural routine (play, walk, mealtime).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Fill the environment with interesting, labelable objects but do not point at or name anything yourself.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'When your child spontaneously names something on their own, respond with enthusiastic praise.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Note each spontaneous label with the time. The goal is at least 2 within the hour.',
+      },
+    ],
+    fullGuide:
+      'Spontaneous labeling means the child names things entirely on their own initiative, without you asking "What is this?" or pointing at objects. To build this skill, create an environment rich with things to notice: bring out new toys, take a walk in an interesting place, look at a picture book together without directing the conversation. The key is to be present and responsive without prompting. When the child says "dog!" while pointing at a dog, give warm, enthusiastic praise: "Yes, that is a dog! Great noticing!" This differential reinforcement teaches the child that naming things on their own gets an especially good reaction. During the 60-minute window, stay engaged but let the child lead. The observation does not need to be one continuous block; you can spread it across a natural routine. Record each spontaneous label with the time and context.',
+    commonMistakes: [
+      'Inadvertently prompting by pointing at objects or looking at them expectantly',
+      'Choosing an observation time when the child is tired, hungry, or not engaged',
+      'Not having enough interesting objects or scenery to spark spontaneous labeling',
+      'Counting labels that came after you asked a question or named something first',
+    ],
+  },
+  'tact-5': {
+    criterionId: 'tact-5',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'List all objects your child can currently label. Identify which categories are missing (household items, body parts, pictures).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Introduce new words one category at a time, starting with simple, familiar items from each category.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'Check mastery: the child should label the item correctly for 3 days in a row without any help.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Keep a running count. Once the child can independently label 10 different objects, reassess.',
+      },
+    ],
+    fullGuide:
+      'Building a repertoire of 10 labels requires systematic vocabulary expansion across categories. Start by listing every object your child currently names without help. Then identify gaps: can they name household items (cup, chair)? People (mom, dad)? Body parts (nose, hand)? Pictures in books? Introduce new words one at a time from underrepresented categories. Use the token system from Level 3 for less motivating items. For each new word, check mastery by testing it without any prompts for 3 consecutive days. If the child gets it right all 3 days, the word is learned. If not, continue practicing. Rotate between review of known words and introduction of new ones. Start with simple words from each category: short, common words the child encounters daily and can pronounce easily. Track your cumulative count to reach 10 distinct, independently labeled objects.',
+    commonMistakes: [
+      'Teaching too many new words at once instead of one at a time',
+      'Not checking mastery before counting a word as learned (3 consecutive days without help)',
+      'Focusing on only one category instead of spreading across household items, people, body parts, and pictures',
+      'Counting labels that still require a prompt as independent',
+    ],
+  },
 }
 
 const TRAINING_RU: Record<string, TrainingContent> = {
@@ -323,6 +487,166 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       'Учить слишком много новых слов одновременно вместо одного за раз',
       'Не убирать подсказки постепенно (слишком резкий переход от полной подсказки к отсутствию)',
       'Считать только просьбы на занятиях, а не в течение всего дня',
+    ],
+  },
+  'tact-1': {
+    criterionId: 'tact-1',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Выберите 2 предмета, которые ребенок любит и уже умеет просить (любимая игрушка, член семьи).',
+      },
+      {
+        stepNumber: 2,
+        instruction: 'Покажите предмет и спросите «Что это?» четким, заинтересованным голосом.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'Если ребенок не отвечает, назовите предмет сами (например, «мяч!») и подождите, пока повторит.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Когда ребенок назовет предмет, похвалите с энтузиазмом и дайте маленькую награду. Повторите со вторым предметом.',
+      },
+    ],
+    fullGuide:
+      'Начинайте с предметов, которые ребенок уже умеет просить (манд), поскольку эти слова уже есть в его словаре. Идея в том, чтобы перенести навык с просьбы на называние: после того как ребенок попросил мяч и получил его, покажите его и спросите «Что это?». Ребенок уже знает слово, поэтому переход к называнию небольшой. Используйте сначала реальные предметы, а не картинки. Занятия должны быть короткими (5-10 минут) и игровыми. Если ребенок не реагирует через несколько секунд, произнесите слово как подсказку, чтобы он повторил. Постепенно увеличивайте паузу перед подсказкой, давая ребенку больше времени ответить самостоятельно. Практикуйте в естественные моменты: во время игры, еды, одевания. Цель — 2 предмета, которые ребенок может назвать при показе.',
+    commonMistakes: [
+      'Использовать только карточки вместо реальных знакомых предметов',
+      'Произносить ответ слишком быстро, не давая ребенку времени подумать',
+      'Практиковать только на занятиях, а не в естественных ситуациях',
+      'Выбирать предметы, которые ребенок никогда не видел, вместо знакомых любимых',
+    ],
+  },
+  'tact-2': {
+    criterionId: 'tact-2',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Подберите 4 предмета, которые ребенок хорошо знает: сочетайте любимые (мишка, мама) с привычными повседневными (чашка, ботинок).',
+      },
+      {
+        stepNumber: 2,
+        instruction: 'Показывайте по одному предмету и спрашивайте «Что это?». Ждите 3-5 секунд.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'Если ребенку нужна помощь, произнесите только первый звук слова (например, «м...» для мяч) вместо целого слова.',
+      },
+      {
+        stepNumber: 4,
+        instruction: 'Хвалите правильные ответы. Чередуйте знакомые предметы с новыми.',
+      },
+    ],
+    fullGuide:
+      'На этом уровне вы расширяете набор с 2 до 4 названий. Стратегия — добавлять по одному новому слову рядом с теми, которые ребенок уже уверенно называет. Начинайте каждое занятие с известного предмета для уверенности, затем вводите новый. Постепенно убирайте подсказки: сначала произносите полное слово для повторения, затем только первый звук, затем ждите молча. Эта последовательность (полное слово, первый звук, самостоятельно) — ключевая. Чередуйте людей, животных и персонажей, чтобы было интересно. Если ребенок затрудняется с новым предметом, используйте его во время игры, чтобы связь между словом и вещью стала естественной. Отслеживайте, какие 4 названия ребенок может произнести самостоятельно.',
+    commonMistakes: [
+      'Пытаться обучить всем 4 новым словам сразу, а не по одному',
+      'Не убирать подсказки постепенно (резкий переход от полной подсказки к отсутствию)',
+      'Тестировать только по картинкам, когда ребенок лучше учится с реальными предметами',
+      'Пропускать практику с уже известными предметами, что снижает уверенность ребенка',
+    ],
+  },
+  'tact-3': {
+    criterionId: 'tact-3',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Соберите 6 повседневных предметов, которые не особо интересны ребенку (ботинок, шапка, ложка, чашка, стул, книга).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Используйте систему наград: давайте жетон (наклейку, фишку) за каждое правильное название. Жетоны обмениваются на любимую вещь.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'После правильного ответа ненадолго отвлеките ребенка (хлопните в ладоши, спойте строчку), затем снова спросите про тот же предмет.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Давайте 1 жетон за слово и 2 жетона за «Это [слово]», поощряя более полные ответы.',
+      },
+    ],
+    fullGuide:
+      'Этот уровень сложнее, потому что ребенку нужно называть предметы, которые он не особенно хочет. Без естественной мотивации нужна внешняя система подкрепления. Сделайте жетонную доску: ребенок получает жетоны (наклейки, фишки, звездочки) за каждое правильное название и обменивает их на любимый предмет или занятие. Давайте 1 жетон за одно слово («ложка») и 2 жетона за фразу («Это ложка»), поощряя более полную речь. Используйте метод отвлечения между пробами: покажите предмет, получите ответ, дайте жетон и похвалите, проведите короткое отвлечение (хлопните в ладоши, спойте строчку), затем снова спросите про тот же предмет. Ребенок должен правильно ответить 3 раза после отвлечений, прежде чем слово считается усвоенным. Практикуйте с реальными бытовыми предметами, которые ребенок встречает каждый день.',
+    commonMistakes: [
+      'Пропускать непривлекательные предметы и практиковать только с тем, что нравится ребенку',
+      'Не использовать систему жетонов, что ведет к низкой мотивации для повседневных предметов',
+      'Переходить к новым словам до того, как ребенок уверенно называет текущие после отвлечений',
+      'Не делать обмен жетонов достаточно мотивирующим (жетоны должны вести к чему-то, что ребенок действительно хочет)',
+    ],
+  },
+  'tact-4': {
+    criterionId: 'tact-4',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Организуйте 60-минутное наблюдение во время привычного распорядка (игра, прогулка, еда).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Наполните окружение интересными предметами, но не показывайте на них и не называйте ничего сами.',
+      },
+      {
+        stepNumber: 3,
+        instruction: 'Когда ребенок спонтанно называет что-то сам, отреагируйте с энтузиазмом.',
+      },
+      {
+        stepNumber: 4,
+        instruction: 'Записывайте каждое спонтанное название с временем. Цель — минимум 2 за час.',
+      },
+    ],
+    fullGuide:
+      'Спонтанное называние означает, что ребенок называет вещи полностью по собственной инициативе, без вопроса «Что это?» или указывания на предметы. Для развития этого навыка создайте среду, богатую вещами, которые можно заметить: достаньте новые игрушки, сходите на прогулку в интересное место, рассматривайте книжку с картинками вместе, не направляя разговор. Ключ — быть рядом и отзывчивым, но не подсказывать. Когда ребенок говорит «собака!», показывая на собаку, дайте теплую, восторженную похвалу: «Да, это собака! Отлично заметил!». Такое подкрепление учит ребенка, что называние вещей по своей инициативе вызывает особенно хорошую реакцию. В течение 60-минутного окна оставайтесь вовлеченными, но пусть ребенок ведет. Наблюдение не обязательно должно быть непрерывным; можно распределить его по привычному распорядку. Записывайте каждое спонтанное название с временем и контекстом.',
+    commonMistakes: [
+      'Невольно подсказывать, показывая на предметы или смотря на них выжидающе',
+      'Выбирать время наблюдения, когда ребенок устал, голоден или не вовлечен',
+      'Недостаточно интересных предметов или обстановки для спонтанного называния',
+      'Считать названия, которые последовали за вашим вопросом или после того, как вы что-то назвали',
+    ],
+  },
+  'tact-5': {
+    criterionId: 'tact-5',
+    shortGuide: [
+      {
+        stepNumber: 1,
+        instruction:
+          'Составьте список всех предметов, которые ребенок сейчас называет. Определите, каких категорий не хватает (бытовые предметы, части тела, картинки).',
+      },
+      {
+        stepNumber: 2,
+        instruction:
+          'Вводите новые слова по одной категории за раз, начиная с простых знакомых предметов из каждой категории.',
+      },
+      {
+        stepNumber: 3,
+        instruction:
+          'Проверяйте усвоение: ребенок должен правильно назвать предмет 3 дня подряд без помощи.',
+      },
+      {
+        stepNumber: 4,
+        instruction:
+          'Ведите текущий подсчет. Когда ребенок самостоятельно называет 10 разных предметов, проведите переоценку.',
+      },
+    ],
+    fullGuide:
+      'Формирование репертуара из 10 названий требует систематического расширения словаря по категориям. Начните со списка всех предметов, которые ребенок называет без помощи. Затем определите пробелы: может ли он назвать бытовые предметы (чашка, стул)? Людей (мама, папа)? Части тела (нос, рука)? Картинки в книгах? Вводите новые слова по одному из недостающих категорий. Используйте систему жетонов с уровня 3 для менее мотивирующих предметов. Для каждого нового слова проверяйте усвоение: тестируйте без подсказок 3 дня подряд. Если ребенок отвечает правильно все 3 дня — слово усвоено. Если нет — продолжайте практику. Чередуйте повторение известных слов и введение новых. Начинайте с простых слов каждой категории: коротких, часто встречающихся слов, которые ребенок слышит каждый день и может легко произнести. Отслеживайте общий счет, чтобы достичь 10 различных самостоятельно называемых предметов.',
+    commonMistakes: [
+      'Учить слишком много новых слов сразу вместо одного за раз',
+      'Не проверять усвоение перед тем как считать слово выученным (3 дня подряд без помощи)',
+      'Сосредотачиваться на одной категории вместо распределения по бытовым предметам, людям, частям тела и картинкам',
+      'Считать называния, для которых ещё нужна подсказка, самостоятельными',
     ],
   },
 }
