@@ -105,12 +105,12 @@ npm run destroy     # Tear down all AWS resources
 
 ## Troubleshooting
 
-**"Unable to resolve AWS account"** -- Run `aws sts get-caller-identity --profile neuron` to verify credentials are configured.
+**"Unable to resolve AWS account"** - Run `aws sts get-caller-identity --profile neuron` to verify credentials are configured.
 
-**"Token has expired"** -- Re-authenticate with `aws sso login --profile neuron`.
+**"Token has expired"** - Re-authenticate with `aws sso login --profile neuron`.
 
-**"CDKToolkit stack not found"** -- You need to bootstrap first (step 4).
+**"CDKToolkit stack not found"** - You need to bootstrap first (step 4).
 
-**"Access Denied"** -- The IAM role/permission set is missing permissions. Use `AdministratorAccess` for now.
+**"Access Denied"** - The IAM role/permission set is missing permissions. Use `AdministratorAccess` for now.
 
-**Deploy succeeds but site shows "Access Denied"** -- Wait a few minutes for CloudFront to propagate, then hard-refresh.
+**Deploy succeeds but site shows "Access Denied"** - Wait a few minutes for CloudFront to propagate, then hard-refresh.

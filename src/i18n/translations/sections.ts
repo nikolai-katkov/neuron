@@ -26,14 +26,10 @@ const MAND_SECTION_EN: Section = {
       level: 2,
       title: 'Makes 4 independent requests',
       description:
-        'The child independently makes at least 4 different requests without prompts. The question "What do you want?" counts as a prompt. The desired object may be visible.',
+        'The child independently makes at least 4 different requests without prompts. The question "What do you want?" is allowed. The desired object may be visible.',
       question: 'Can the child make 4 different requests without any prompts?',
       scoringType: 'KOM',
-      conditions: [
-        'No prompts allowed',
-        '"What do you want?" counts as a prompt',
-        'Object may be visible',
-      ],
+      conditions: ['No prompts allowed', '"What do you want?" is allowed', 'Object may be visible'],
       examples: ['musical toy', 'spring toy', 'ball'],
       developmentDimension: 'Independence',
     },
@@ -43,7 +39,7 @@ const MAND_SECTION_EN: Section = {
       level: 3,
       title: 'Generalizes 6 requests',
       description:
-        'The child generalizes at least 6 mand responses across different people, environments, and types of reinforcement. This shows the skill transfers beyond a single context.',
+        'The child generalizes at least 6 requests across different people, environments, and types of rewards. This shows the skill transfers beyond a single context.',
       question:
         'Can the child make requests with different people, in different places, and for different things?',
       scoringType: 'KOM',
@@ -74,7 +70,7 @@ const MAND_SECTION_EN: Section = {
       level: 5,
       title: 'Has 10 independent requests',
       description:
-        'The child has a repertoire of at least 10 independent mand responses without any prompts. The question "What do you want?" is excluded from counting.',
+        'The child has a repertoire of at least 10 independent requests without any prompts. The question "What do you want?" is excluded from counting.',
       question: 'Does the child independently request at least 10 different items?',
       scoringType: 'KOM',
       conditions: ['No prompts allowed', '"What do you want?" counts as a prompt'],
@@ -120,9 +116,9 @@ const TACT_SECTION_EN: Section = {
       id: 'tact-3',
       sectionId: 'tact',
       level: 3,
-      title: 'Labels 6 non-reinforcing objects',
+      title: 'Labels 6 everyday objects',
       description:
-        'The child can label at least 6 objects that are not inherently reinforcing or preferred. These are everyday items the child may not be motivated by.',
+        'The child can label at least 6 everyday objects that are not their favorites. These are ordinary items the child may not be especially interested in.',
       question: 'Can the child name at least 6 everyday objects that are not their favorites?',
       scoringType: 'TCT',
       conditions: [],
@@ -201,7 +197,7 @@ const MAND_SECTION_RU: Section = {
       level: 3,
       title: 'Обобщение 6 просьб',
       description:
-        'Ребенок обобщает минимум 6 просьб: использует навык с разными людьми, в разных местах и для разных видов подкрепления. Это показывает, что навык переносится за пределы одного контекста.',
+        'Ребенок обобщает минимум 6 просьб: использует навык с разными людьми, в разных местах и для разных видов поощрения. Это показывает, что навык переносится за пределы одного контекста.',
       question:
         'Может ли ребенок обращаться с просьбами к разным людям, в разных местах и по разным поводам?',
       scoringType: 'KOM',
@@ -282,9 +278,9 @@ const TACT_SECTION_RU: Section = {
       id: 'tact-3',
       sectionId: 'tact',
       level: 3,
-      title: 'Называет 6 неподкрепляющих предметов',
+      title: 'Называет 6 обычных повседневных предметов',
       description:
-        'Ребенок может назвать минимум 6 предметов, которые не являются предпочитаемыми или подкрепляющими. Это повседневные предметы, к которым у ребенка нет особой мотивации.',
+        'Ребенок может назвать минимум 6 обычных повседневных предметов, которые не являются его любимыми. Это вещи, к которым у ребенка нет особого интереса.',
       question:
         'Может ли ребенок назвать минимум 6 повседневных предметов, которые не являются его любимыми?',
       scoringType: 'TCT',
