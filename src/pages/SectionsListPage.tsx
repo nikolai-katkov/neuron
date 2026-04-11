@@ -1,4 +1,4 @@
-import { MessageCircle, Tag } from 'lucide-react'
+import { AudioLines, Blocks, Ear, Eye, Hand, MessageCircle, Mic, Tag, Users } from 'lucide-react'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,8 +9,15 @@ import type { Section } from '../types'
 import styles from './SectionsListPage.module.css'
 
 const SECTION_ICONS: Record<string, React.ReactNode> = {
-  mand: <MessageCircle size={20} aria-hidden="true" />,
-  tact: <Tag size={20} aria-hidden="true" />,
+  'mand': <MessageCircle size={20} aria-hidden="true" />,
+  'tact': <Tag size={20} aria-hidden="true" />,
+  'listener-responding': <Ear size={20} aria-hidden="true" />,
+  'visual-perceptual': <Eye size={20} aria-hidden="true" />,
+  'independent-play': <Blocks size={20} aria-hidden="true" />,
+  'social-behaviour': <Users size={20} aria-hidden="true" />,
+  'motor-imitation': <Hand size={20} aria-hidden="true" />,
+  'echoic': <AudioLines size={20} aria-hidden="true" />,
+  'spontaneous-vocal': <Mic size={20} aria-hidden="true" />,
 }
 
 function SectionCard({ section }: { section: Section }) {

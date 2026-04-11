@@ -317,7 +317,111 @@ const TACT_SECTION_RU: Section = {
   ],
 }
 
+const PLACEHOLDER_SECTIONS_EN: Section[] = [
+  {
+    id: 'listener-responding',
+    title: 'Listener Responding',
+    subtitle: 'Understanding',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'visual-perceptual',
+    title: 'Visual Perceptual',
+    subtitle: 'Matching & Sorting',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'independent-play',
+    title: 'Independent Play',
+    subtitle: 'Play Skills',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'social-behaviour',
+    title: 'Social Behaviour',
+    subtitle: 'Social Skills',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'motor-imitation',
+    title: 'Motor Imitation',
+    subtitle: 'Movement Copying',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'echoic',
+    title: 'Echoic',
+    subtitle: 'Vocal Imitation',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'spontaneous-vocal',
+    title: 'Spontaneous Vocal',
+    subtitle: 'Vocal Behaviour',
+    isAvailable: false,
+    criteria: [],
+  },
+]
+
+const PLACEHOLDER_SECTIONS_RU: Section[] = [
+  {
+    id: 'listener-responding',
+    title: 'Реакция слушателя',
+    subtitle: 'Понимание речи',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'visual-perceptual',
+    title: 'Визуальное восприятие',
+    subtitle: 'Сопоставление',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'independent-play',
+    title: 'Самостоятельная игра',
+    subtitle: 'Игровые навыки',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'social-behaviour',
+    title: 'Социальное поведение',
+    subtitle: 'Социальные навыки',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'motor-imitation',
+    title: 'Моторная имитация',
+    subtitle: 'Подражание движениям',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'echoic',
+    title: 'Эхо реакция',
+    subtitle: 'Повторение звуков',
+    isAvailable: false,
+    criteria: [],
+  },
+  {
+    id: 'spontaneous-vocal',
+    title: 'Спонтанное вокальное поведение',
+    subtitle: 'Голосовое поведение',
+    isAvailable: false,
+    criteria: [],
+  },
+]
+
 export const SECTIONS_BY_LANGUAGE: Record<Language, Section[]> = {
-  en: [MAND_SECTION_EN, TACT_SECTION_EN],
-  ru: [MAND_SECTION_RU, TACT_SECTION_RU],
+  en: [MAND_SECTION_EN, TACT_SECTION_EN, ...PLACEHOLDER_SECTIONS_EN],
+  ru: [MAND_SECTION_RU, TACT_SECTION_RU, ...PLACEHOLDER_SECTIONS_RU],
 }

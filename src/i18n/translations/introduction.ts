@@ -55,7 +55,139 @@ const INTRODUCTIONS_RU: Record<string, SectionIntroduction> = {
   },
 }
 
+const PLACEHOLDER_INTRODUCTIONS_EN: Record<string, SectionIntroduction> = {
+  'listener-responding': {
+    sectionId: 'listener-responding',
+    shortBullets: [
+      'Listener responding measures whether your child understands and follows spoken language.',
+      'This section assesses skills like looking at named objects, following simple instructions, and selecting items when asked.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'visual-perceptual': {
+    sectionId: 'visual-perceptual',
+    shortBullets: [
+      'Visual perceptual skills involve matching, sorting, and recognizing visual patterns.',
+      'This section assesses whether your child can match identical objects, sort by category, and complete simple puzzles.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'independent-play': {
+    sectionId: 'independent-play',
+    shortBullets: [
+      'Independent play measures how your child explores toys and activities on their own.',
+      'This section assesses functional play, sustained attention, and appropriate use of toys without adult direction.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'social-behaviour': {
+    sectionId: 'social-behaviour',
+    shortBullets: [
+      'Social behaviour assesses how your child interacts with other people.',
+      'This section looks at eye contact, joint attention, turn-taking, and social play with peers.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'motor-imitation': {
+    sectionId: 'motor-imitation',
+    shortBullets: [
+      'Motor imitation measures whether your child can copy physical movements.',
+      'This section assesses copying gestures, body movements, and actions with objects.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'echoic': {
+    sectionId: 'echoic',
+    shortBullets: [
+      'Echoic skills measure whether your child can repeat sounds and words.',
+      'This section assesses vocal imitation from single sounds to multi-word phrases.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+  'spontaneous-vocal': {
+    sectionId: 'spontaneous-vocal',
+    shortBullets: [
+      'Spontaneous vocal behaviour measures the sounds your child produces on their own.',
+      'This section assesses babbling, sound variety, and spontaneous word approximations.',
+    ],
+    fullExplanation: 'This section is coming soon and is not yet available for assessment.',
+    videoPlaceholderLabel: 'Video coming soon',
+  },
+}
+
+const PLACEHOLDER_INTRODUCTIONS_RU: Record<string, SectionIntroduction> = {
+  'listener-responding': {
+    sectionId: 'listener-responding',
+    shortBullets: [
+      'Реакция слушателя измеряет, понимает ли ребенок устную речь и следует ли указаниям.',
+      'Этот раздел оценивает навыки: смотреть на названные предметы, выполнять простые инструкции, выбирать предметы по просьбе.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'visual-perceptual': {
+    sectionId: 'visual-perceptual',
+    shortBullets: [
+      'Навыки визуального восприятия включают сопоставление, сортировку и распознавание зрительных паттернов.',
+      'Этот раздел оценивает, может ли ребенок сопоставлять одинаковые предметы, сортировать по категориям и собирать простые пазлы.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'independent-play': {
+    sectionId: 'independent-play',
+    shortBullets: [
+      'Самостоятельная игра измеряет, как ребенок исследует игрушки и занятия без помощи.',
+      'Этот раздел оценивает функциональную игру, устойчивое внимание и правильное использование игрушек без руководства взрослого.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'social-behaviour': {
+    sectionId: 'social-behaviour',
+    shortBullets: [
+      'Социальное поведение оценивает, как ребенок взаимодействует с другими людьми.',
+      'Этот раздел рассматривает зрительный контакт, совместное внимание, очередность и социальную игру со сверстниками.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'motor-imitation': {
+    sectionId: 'motor-imitation',
+    shortBullets: [
+      'Моторная имитация измеряет, может ли ребенок копировать физические движения.',
+      'Этот раздел оценивает копирование жестов, движений тела и действий с предметами.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'echoic': {
+    sectionId: 'echoic',
+    shortBullets: [
+      'Эхоические навыки измеряют, может ли ребенок повторять звуки и слова.',
+      'Этот раздел оценивает голосовую имитацию от отдельных звуков до многословных фраз.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+  'spontaneous-vocal': {
+    sectionId: 'spontaneous-vocal',
+    shortBullets: [
+      'Спонтанное вокальное поведение измеряет звуки, которые ребенок производит самостоятельно.',
+      'Этот раздел оценивает лепет, разнообразие звуков и спонтанные приближения к словам.',
+    ],
+    fullExplanation: 'Этот раздел скоро появится и пока недоступен для оценки.',
+    videoPlaceholderLabel: 'Видео появится позже',
+  },
+}
+
 export const INTRODUCTIONS_BY_LANGUAGE: Record<Language, Record<string, SectionIntroduction>> = {
-  en: INTRODUCTIONS_EN,
-  ru: INTRODUCTIONS_RU,
+  en: { ...INTRODUCTIONS_EN, ...PLACEHOLDER_INTRODUCTIONS_EN },
+  ru: { ...INTRODUCTIONS_RU, ...PLACEHOLDER_INTRODUCTIONS_RU },
 }
