@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 
-import type { Section, SectionIntroduction, TrainingContent } from '../types'
+import type { Section, SectionIntroduction, TrainingContent, VocabularyCategory } from '../types'
 import { loadLanguage, saveLanguage } from '../utils'
 import {
   INTRODUCTIONS_BY_LANGUAGE,
   SECTIONS_BY_LANGUAGE,
   TRAINING_BY_LANGUAGE,
   UI_TRANSLATIONS,
+  VOCABULARY_BY_LANGUAGE,
 } from './translations'
 import type { Language, UiTranslations } from './types'
 
@@ -50,6 +51,7 @@ export interface LanguageContextValue {
   sections: Section[]
   sectionIntroductions: Record<string, SectionIntroduction>
   trainingContent: Record<string, TrainingContent>
+  vocabulary: VocabularyCategory[]
 }
 
 export const LanguageContext = createContext<LanguageContextValue | null>(null)
@@ -80,6 +82,7 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
   const sections = useMemo(() => SECTIONS_BY_LANGUAGE[language], [language])
   const sectionIntroductions = useMemo(() => INTRODUCTIONS_BY_LANGUAGE[language], [language])
   const trainingContent = useMemo(() => TRAINING_BY_LANGUAGE[language], [language])
+  const vocabulary = useMemo(() => VOCABULARY_BY_LANGUAGE[language], [language])
 
   const value = useMemo(
     () => ({
@@ -89,8 +92,9 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
       sections,
       sectionIntroductions,
       trainingContent,
+      vocabulary,
     }),
-    [language, setLanguage, t, sections, sectionIntroductions, trainingContent]
+    [language, setLanguage, t, sections, sectionIntroductions, trainingContent, vocabulary]
   )
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
