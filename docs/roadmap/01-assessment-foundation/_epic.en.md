@@ -2,11 +2,11 @@ _[Русский](./_epic.ru.md)_
 
 ---
 
-# Epic 01: Assessment Foundation
+# Epic 01: Assessment Platform
 
 ## Summary
 
-Implement the core assessment flow for the MAND section: sections list, introduction, criteria progression, binary assessment, training guidance, and the assess-train-reassess loop. TACT shown as a placeholder.
+Implement the core assessment platform: sections list, introduction, criteria progression, binary assessment, training guidance, and the assess-train-reassess loop. MAND used as the first section; TACT shown as a placeholder.
 
 **Flow:** Learn > Assess > (if needed) Train > Reassess
 
