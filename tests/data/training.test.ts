@@ -8,9 +8,17 @@ describe.each(LANGUAGES)('training content seed data (%s)', language => {
   const training = TRAINING_BY_LANGUAGE[language]
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- guaranteed by test assertions
   const mandSection = sections.find(s => s.id === 'mand')!
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- guaranteed by test assertions
+  const tactSection = sections.find(s => s.id === 'tact')!
 
   it('has training content for every MAND criterion', () => {
     for (const criterion of mandSection.criteria) {
+      expect(training[criterion.id]).toBeDefined()
+    }
+  })
+
+  it('has training content for every TACT criterion', () => {
+    for (const criterion of tactSection.criteria) {
       expect(training[criterion.id]).toBeDefined()
     }
   })

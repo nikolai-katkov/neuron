@@ -6,7 +6,6 @@ import { AssessmentProvider } from '../../src/hooks'
 import { LanguageProvider } from '../../src/i18n'
 import { SECTIONS_BY_LANGUAGE } from '../../src/i18n/translations'
 import { SectionsListPage } from '../../src/pages/SectionsListPage'
-import { byT } from '../helpers/byT'
 
 const mockNavigate = vi.fn()
 
@@ -36,16 +35,17 @@ describe('SectionsListPage', () => {
     mockNavigate.mockClear()
   })
 
-  it('renders MAND card with title and progress', () => {
+  it('renders MAND and TACT cards with progress', () => {
     renderPage()
     expect(screen.getByText('MAND')).toBeInTheDocument()
-    expect(screen.getByText('0/5')).toBeInTheDocument()
+    expect(screen.getByText('TACT')).toBeInTheDocument()
+    expect(screen.getAllByText('0/5')).toHaveLength(2)
   })
 
-  it('renders TACT card as coming soon', () => {
+  it('renders placeholder sections as coming soon', () => {
     renderPage()
-    expect(screen.getByText('TACT')).toBeInTheDocument()
-    expect(byT('comingSoon')).toBeInTheDocument()
+    const comingSoonElements = document.querySelectorAll('[data-t="comingSoon"]')
+    expect(comingSoonElements.length).toBe(7)
   })
 
   it('navigates to MAND intro when MAND card is clicked', async () => {
@@ -54,9 +54,9 @@ describe('SectionsListPage', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/sections/mand/intro')
   })
 
-  it('does not navigate when TACT card is clicked', async () => {
+  it('navigates to TACT intro when TACT card is clicked', async () => {
     renderPage()
     await userEvent.click(screen.getByText('TACT'))
-    expect(mockNavigate).not.toHaveBeenCalled()
+    expect(mockNavigate).toHaveBeenCalledWith('/sections/tact/intro')
   })
 })
