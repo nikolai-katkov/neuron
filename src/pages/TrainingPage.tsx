@@ -1,7 +1,8 @@
 import { ListRestart, RotateCcw } from 'lucide-react'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
+import type { BreadcrumbItem } from '../components/ui'
 import { Button, PageLayout, ProgressiveDisclosure, VideoPlaceholder } from '../components/ui'
 import { useLanguage } from '../hooks'
 import { tProps } from '../i18n'
@@ -18,6 +19,21 @@ export function TrainingPage() {
   const section = sections.find(s => s.id === sectionId)
   const criterion = section?.criteria.find(c => c.id === criterionId)
   const training = criterionId ? trainingContent[criterionId] : undefined
+
+  const breadcrumbs: BreadcrumbItem[] = useMemo(
+    () =>
+      section && criterion
+        ? [
+            { label: t('home'), path: '/' },
+            { label: section.title, path: `/sections/${section.id}/criteria` },
+            {
+              label: criterion.title,
+              path: `/sections/${section.id}/criteria/${criterion.id}/assess`,
+            },
+          ]
+        : [],
+    [t, section, criterion]
+  )
 
   const handleRetry = useCallback(() => {
     if (!section || !criterion) {
@@ -38,7 +54,7 @@ export function TrainingPage() {
   }
 
   return (
-    <PageLayout title={criterion.title} hasBackButton backPath={`/sections/${section.id}/criteria`}>
+    <PageLayout title={criterion.title} breadcrumbs={breadcrumbs}>
       <VideoPlaceholder />
 
       <ol className={styles.stepList}>

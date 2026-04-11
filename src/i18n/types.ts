@@ -1,7 +1,9 @@
 export type Language = 'ru' | 'en'
 
 export interface UiTranslations {
-  // PageLayout
+  // Breadcrumbs
+  home: string
+  // PageLayout (legacy — kept for potential reuse)
   back: string
   goBack: string
   // StatusBadge

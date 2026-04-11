@@ -1,6 +1,7 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
+import type { BreadcrumbItem } from '../components/ui'
 import { Button, PageLayout, ProgressiveDisclosure, VideoPlaceholder } from '../components/ui'
 import { useLanguage } from '../hooks'
 import { tProps } from '../i18n'
@@ -16,6 +17,8 @@ export function SectionIntroPage() {
 
   const criteriaPath = `/sections/${sectionId}/criteria`
 
+  const breadcrumbs: BreadcrumbItem[] = useMemo(() => [{ label: t('home'), path: '/' }], [t])
+
   const handleStart = useCallback(() => {
     navigate(criteriaPath)
   }, [navigate, criteriaPath])
@@ -29,7 +32,7 @@ export function SectionIntroPage() {
   }
 
   return (
-    <PageLayout title={section.title} hasBackButton backPath="/">
+    <PageLayout title={section.title} breadcrumbs={breadcrumbs}>
       <p className={styles.sectionSubtitle}>{section.subtitle}</p>
 
       <VideoPlaceholder label={introduction.videoPlaceholderLabel} />

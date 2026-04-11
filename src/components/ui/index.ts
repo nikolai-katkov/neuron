@@ -1,3 +1,5 @@
+export type { BreadcrumbItem } from './Breadcrumbs/Breadcrumbs'
+export { Breadcrumbs } from './Breadcrumbs/Breadcrumbs'
 export { Button } from './Button/Button'
 export { Card } from './Card/Card'
 export { ControlsPill } from './ControlsPill/ControlsPill'

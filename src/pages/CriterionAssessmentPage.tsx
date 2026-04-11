@@ -1,7 +1,8 @@
 import { Check, X } from 'lucide-react'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
+import type { BreadcrumbItem } from '../components/ui'
 import { Button, PageLayout } from '../components/ui'
 import { useAssessment, useLanguage, useTheme } from '../hooks'
 import { tProps } from '../i18n'
@@ -19,6 +20,21 @@ export function CriterionAssessmentPage() {
 
   const section = sections.find(s => s.id === sectionId)
   const criterion = section?.criteria.find(c => c.id === criterionId)
+
+  const breadcrumbs: BreadcrumbItem[] = useMemo(
+    () =>
+      section && criterion
+        ? [
+            { label: t('home'), path: '/' },
+            { label: section.title, path: `/sections/${section.id}/criteria` },
+            {
+              label: criterion.title,
+              path: `/sections/${section.id}/criteria/${criterion.id}/assess`,
+            },
+          ]
+        : [],
+    [t, section, criterion]
+  )
 
   const handleYes = useCallback(() => {
     if (!criterion || !section) {
@@ -41,7 +57,7 @@ export function CriterionAssessmentPage() {
   }
 
   return (
-    <PageLayout hasBackButton backPath={`/sections/${section.id}/criteria`}>
+    <PageLayout breadcrumbs={breadcrumbs}>
       <div
         className={[styles.assessmentLayout, styles[`layout_${theme}`]].filter(Boolean).join(' ')}
       >

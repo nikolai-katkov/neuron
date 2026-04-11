@@ -1,6 +1,7 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
+import type { BreadcrumbItem } from '../components/ui'
 import { Card, PageLayout, ProgressBar, StatusBadge } from '../components/ui'
 import { useAssessment, useLanguage } from '../hooks'
 import { interpolate, tProps } from '../i18n'
@@ -39,6 +40,17 @@ export function CriteriaListPage() {
 
   const section = sections.find(s => s.id === sectionId)
 
+  const breadcrumbs: BreadcrumbItem[] = useMemo(
+    () =>
+      section
+        ? [
+            { label: t('home'), path: '/' },
+            { label: section.title, path: `/sections/${section.id}/intro` },
+          ]
+        : [],
+    [t, section]
+  )
+
   if (!section) {
     return <Navigate to="/" replace />
   }
@@ -46,7 +58,7 @@ export function CriteriaListPage() {
   const progress = getSectionProgress(section.id)
 
   return (
-    <PageLayout title={section.title} hasBackButton backPath={`/sections/${section.id}/intro`}>
+    <PageLayout title={section.title} breadcrumbs={breadcrumbs}>
       <div className={styles.progressHeader}>
         <ProgressBar completed={progress.completed} total={progress.total} />
         <span className={styles.progressLabel} {...tProps('completedOfTotal')}>

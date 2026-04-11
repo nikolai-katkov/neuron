@@ -2,6 +2,7 @@ import type { Language, UiTranslations } from '../types'
 
 export const UI_TRANSLATIONS: Record<Language, UiTranslations> = {
   ru: {
+    home: 'Главная',
     back: 'Назад',
     goBack: 'Вернуться назад',
     statusNotStarted: 'Впереди',
@@ -45,6 +46,7 @@ export const UI_TRANSLATIONS: Record<Language, UiTranslations> = {
     collapseControls: 'Закрыть настройки',
   },
   en: {
+    home: 'Home',
     back: 'Back',
     goBack: 'Go back',
     statusNotStarted: 'Not started',

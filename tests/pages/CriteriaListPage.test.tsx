@@ -52,10 +52,8 @@ describe('CriteriaListPage', () => {
 
   it('navigates to assessment when a criterion is clicked', async () => {
     renderPage()
-    // Click on the first criterion card (skip back button)
     const allButtons = screen.getAllByRole('button')
-    // Back button, then 5 criterion cards
-    const firstCriterionCard = allButtons[1]
+    const firstCriterionCard = allButtons[0]
     await userEvent.click(firstCriterionCard)
     expect(mockNavigate).toHaveBeenCalledWith('/sections/mand/criteria/mand-1/assess')
   })
