@@ -2,10 +2,10 @@ import type { Language } from '../i18n'
 import type { AssessmentState, ColorMode, Theme } from '../types'
 import { COLOR_MODES, DEFAULT_COLOR_MODE, DEFAULT_THEME, THEMES } from '../types'
 
-const STORAGE_KEY = 'neuron-assessment-state'
-const LANGUAGE_KEY = 'neuron-language'
-const THEME_KEY = 'neuron-theme'
-const COLOR_MODE_KEY = 'neuron-color-mode'
+const STORAGE_KEY = 'mom-aba-assessment-state'
+const LANGUAGE_KEY = 'mom-aba-language'
+const THEME_KEY = 'mom-aba-theme'
+const COLOR_MODE_KEY = 'mom-aba-color-mode'
 const DEFAULT_LANGUAGE: Language = 'ru'
 
 export function loadLanguage(): Language {

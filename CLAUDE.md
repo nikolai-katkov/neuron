@@ -89,7 +89,7 @@ src/
 
 **Multi-theme:** 3 themes (Warm & Organic, Soft & Playful, Editorial & Premium) with light/dark mode each. Default: Warm + light.
 
-**Theme architecture:** CSS custom properties overridden via `[data-theme]` + `[data-mode]` attributes on `<html>`. Theme CSS files in `src/styles/themes/`. `ThemeProvider` context provides `theme`, `setTheme`, `colorMode`, `toggleColorMode`. Persisted in localStorage (`neuron-theme`, `neuron-color-mode`).
+**Theme architecture:** CSS custom properties overridden via `[data-theme]` + `[data-mode]` attributes on `<html>`. Theme CSS files in `src/styles/themes/`. `ThemeProvider` context provides `theme`, `setTheme`, `colorMode`, `toggleColorMode`. Persisted in localStorage (`mom-aba-theme`, `mom-aba-color-mode`).
 
 **Each theme has:** Unique font pairing, color palette, shape language (border-radius), shadow style, gradient tokens, animation easing, layout variations (via `:global([data-theme])` CSS selectors and conditional JSX), and decorative elements (CSS pseudo-elements).
 
@@ -103,7 +103,7 @@ src/
 
 ### Internationalization (i18n)
 
-**Languages:** Russian (default) and English. Language is persisted in localStorage (`neuron-language`).
+**Languages:** Russian (default) and English. Language is persisted in localStorage (`mom-aba-language`).
 
 **Architecture:** Custom hook + context (no library). `LanguageProvider` wraps the app, `useLanguage()` hook provides `t(key)` for UI strings and language-resolved domain data (`sections`, `sectionIntroductions`, `trainingContent`).
 

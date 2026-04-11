@@ -4,7 +4,7 @@ _[Русский](./README.ru.md)_
 
 # Roadmap
 
-Development status and story sequence for Neuron.
+Development status and story sequence for Mom ABA.
 
 ## Status Dashboard
 

@@ -1,10 +1,10 @@
 import * as cdk from 'aws-cdk-lib'
 
-import { NeuronStack } from './stack'
+import { MomAbaStack } from './stack'
 
 const app = new cdk.App()
 
-new NeuronStack(app, 'Neuron', {
+new MomAbaStack(app, 'MomAba', {
   env: {
     region: 'eu-central-1',
   },

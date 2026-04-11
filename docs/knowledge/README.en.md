@@ -4,7 +4,7 @@ _[Русский](./README.ru.md)_
 
 # Knowledge Articles
 
-Domain reference articles for the Neuron application. Each article covers a specific technical area with embedded architecture decisions.
+Domain reference articles for the Mom ABA application. Each article covers a specific technical area with embedded architecture decisions.
 
 ## Articles
 

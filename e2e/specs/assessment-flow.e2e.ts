@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/')
   await page.evaluate(() => {
     localStorage.clear()
-    localStorage.setItem('neuron-language', 'en')
+    localStorage.setItem('mom-aba-language', 'en')
   })
 })
 

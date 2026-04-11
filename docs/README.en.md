@@ -2,7 +2,7 @@ _[Русский](./README.ru.md)_
 
 ---
 
-# Neuron
+# Mom ABA
 
 Application to help parents support their autistic children.
 

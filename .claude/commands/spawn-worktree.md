@@ -11,29 +11,29 @@ Create a sibling git worktree for parallel Claude Code work.
 2. **Create the worktree** as a sibling directory next to the current repo root:
 
    ```
-   git worktree add ../neuron-$ARGUMENTS -b $ARGUMENTS
+   git worktree add ../mom-aba-$ARGUMENTS -b $ARGUMENTS
    ```
 
-   The branch name matches the worktree name. If the branch already exists, use `git worktree add ../neuron-$ARGUMENTS $ARGUMENTS` instead (without `-b`).
+   The branch name matches the worktree name. If the branch already exists, use `git worktree add ../mom-aba-$ARGUMENTS $ARGUMENTS` instead (without `-b`).
 
 3. **Copy local Claude settings** (untracked files that git worktree won't carry over):
 
    ```
-   cp .claude/settings.local.json ../neuron-$ARGUMENTS/.claude/settings.local.json
+   cp .claude/settings.local.json ../mom-aba-$ARGUMENTS/.claude/settings.local.json
    ```
 
 4. **Symlink node_modules** from root to avoid a full install:
 
    ```
-   ln -s "$(pwd)/node_modules" ../neuron-$ARGUMENTS/node_modules
+   ln -s "$(pwd)/node_modules" ../mom-aba-$ARGUMENTS/node_modules
    ```
 
 5. **Print summary** with the path and a ready-to-copy command:
 
    ```
-   Worktree ready: ../neuron-$ARGUMENTS (branch: $ARGUMENTS)
+   Worktree ready: ../mom-aba-$ARGUMENTS (branch: $ARGUMENTS)
 
-   cd ../neuron-$ARGUMENTS && claude
+   cd ../mom-aba-$ARGUMENTS && claude
    ```
 
 ## Error Handling

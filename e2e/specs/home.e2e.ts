@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 test.beforeEach(async ({ page }) => {
   await page.goto('/')
   await page.evaluate(() => {
-    localStorage.setItem('neuron-language', 'en')
+    localStorage.setItem('mom-aba-language', 'en')
   })
   await page.goto('/')
 })

@@ -16,13 +16,13 @@ describe('storage utilities', () => {
   })
 
   it('loadAssessmentState returns initial state for corrupted JSON', () => {
-    localStorage.setItem('neuron-assessment-state', 'not-valid-json')
+    localStorage.setItem('mom-aba-assessment-state', 'not-valid-json')
     const state = loadAssessmentState()
     expect(state).toEqual(createInitialState())
   })
 
   it('loadAssessmentState returns initial state for invalid shape', () => {
-    localStorage.setItem('neuron-assessment-state', JSON.stringify({ wrong: 'shape' }))
+    localStorage.setItem('mom-aba-assessment-state', JSON.stringify({ wrong: 'shape' }))
     const state = loadAssessmentState()
     expect(state).toEqual(createInitialState())
   })
