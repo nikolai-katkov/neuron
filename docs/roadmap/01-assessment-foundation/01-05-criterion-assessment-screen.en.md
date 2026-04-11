@@ -4,7 +4,7 @@ _[Русский](./01-05-criterion-assessment-screen.ru.md)_
 
 # 01-05: Criterion Assessment Screen
 
-Status: Draft
+Status: Done
 
 ## Summary
 
@@ -12,32 +12,32 @@ Binary assessment screen for a single criterion. Presents a clear Yes/No questio
 
 ## User Acceptance Criteria
 
-- [ ] Clear, binary question displayed prominently (e.g., "Can the child request one of two items?")
-- [ ] Illustration area shows a static placeholder image relevant to the criterion (2 distinct objects for MAND criteria)
-- [ ] Context section shows: short explanation of what to look for, conditions from the criterion
-- [ ] Two buttons: "Yes" and "No" -- no ambiguity, no other options
-- [ ] "Yes" shows brief positive feedback, marks complete, returns to criteria list with updated status
-- [ ] "No" navigates to training screen for this criterion
-- [ ] Criterion conditions (e.g., "no prompts allowed") are visible so parent assesses correctly
+- [x] Clear, binary question displayed prominently (e.g., "Can the child request one of two items?")
+- [x] Illustration area shows a static placeholder image relevant to the criterion (2 distinct objects for MAND criteria)
+- [x] Context section shows: short explanation of what to look for, conditions from the criterion
+- [x] Two buttons: "Yes" and "No" -- no ambiguity, no other options
+- [x] "Yes" shows brief positive feedback, marks complete, returns to criteria list with updated status
+- [x] "No" navigates to training screen for this criterion
+- [x] Criterion conditions (e.g., "no prompts allowed") are visible so parent assesses correctly
 
 ## System Acceptance Criteria
 
-- [ ] Route: `/sections/:sectionId/criteria/:criterionId/assess`
-- [ ] "Yes" persists score (1) and updates criterion status to Completed
-- [ ] "No" persists score (0) and updates criterion status to InProgress
-- [ ] Score stored as numeric value (0 or 1), not boolean (see [PM Questions: Scoring Model](../../knowledge/pm-questions-scoring-model.en.md))
-- [ ] State persists across page reloads
-- [ ] Navigation: Yes -> criteria list, No -> training screen
+- [x] Route: `/sections/:sectionId/criteria/:criterionId/assess`
+- [x] "Yes" persists score (1) and updates criterion status to Completed
+- [x] "No" persists score (0) and updates criterion status to InProgress
+- [x] Score stored as numeric value (0 or 1), not boolean (see [PM Questions: Scoring Model](../../knowledge/pm-questions-scoring-model.en.md))
+- [x] State persists across page reloads
+- [x] Navigation: Yes -> criteria list, No -> training screen
 
 ## Development Acceptance Criteria
 
-- [ ] CSS Modules with design tokens only
-- [ ] Responsive across all device profiles
-- [ ] Placeholder images use a consistent aspect ratio and fallback styling
-- [ ] Unit test: Yes/No handlers update state correctly
-- [ ] Unit test: correct criterion data loaded based on route params
-- [ ] E2E test: full Yes flow (tap Yes -> returns to list with updated state)
-- [ ] E2E test: full No flow (tap No -> reaches training screen)
+- [x] CSS Modules with design tokens only
+- [x] Responsive across all device profiles
+- [x] Placeholder images use a consistent aspect ratio and fallback styling
+- [x] Unit test: Yes/No handlers update state correctly
+- [x] Unit test: correct criterion data loaded based on route params
+- [x] E2E test: full Yes flow (tap Yes -> returns to list with updated state)
+- [x] E2E test: full No flow (tap No -> reaches training screen)
 
 ## Depends On
 
@@ -49,4 +49,8 @@ Binary assessment screen for a single criterion. Presents a clear Yes/No questio
 
 ## Related Files
 
-_None yet._
+- `src/pages/CriterionAssessmentPage.tsx`
+- `src/pages/CriterionAssessmentPage.module.css`
+- `src/components/ui/Button/Button.tsx`
+- `src/components/ui/Button/Button.module.css`
+- `tests/pages/CriterionAssessmentPage.test.tsx`

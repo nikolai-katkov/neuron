@@ -4,8 +4,8 @@ _[English](./pm-questions-scoring-model.en.md)_
 
 # Вопросы к PM: Модель оценивания
 
-Связанные истории: [Эпик 01 -- Основа оценивания](../roadmap/01-assessment-foundation/_epic.md)
-Связанные файлы: _Пока нет._
+Связанные истории: [Эпик 01 -- Основа оценивания](../roadmap/01-assessment-foundation/_epic.ru.md)
+Связанные файлы: `src/types/state.ts`, `src/types/assessment.ts`
 
 ---
 

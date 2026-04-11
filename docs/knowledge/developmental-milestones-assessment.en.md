@@ -4,8 +4,8 @@ _[Русский](./developmental-milestones-assessment.ru.md)_
 
 # Developmental Milestones Assessment
 
-Related stories: [Epic 01 -- Assessment Foundation](../roadmap/01-assessment-foundation/_epic.md)
-Related files: _None yet -- will be updated as implementation proceeds._
+Related stories: [Epic 01 -- Assessment Foundation](../roadmap/01-assessment-foundation/_epic.en.md)
+Related files: `src/types/assessment.ts`, `src/i18n/translations/sections.ts`, `src/i18n/translations/introduction.ts`, `src/i18n/translations/training.ts`
 
 ---
 

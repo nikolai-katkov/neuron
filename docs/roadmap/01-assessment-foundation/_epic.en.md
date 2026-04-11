@@ -19,15 +19,18 @@ Implement the core assessment flow for the MAND section: sections list, introduc
 
 | #     | Story                       | Status |
 | ----- | --------------------------- | ------ |
-| 01-01 | Assessment data model       | Draft  |
-| 01-02 | Sections list screen        | Draft  |
-| 01-03 | Section introduction screen | Draft  |
-| 01-04 | Criteria list screen        | Draft  |
-| 01-05 | Criterion assessment screen | Draft  |
-| 01-06 | Training screen             | Draft  |
-| 01-07 | Assessment loop and state   | Draft  |
+| 01-01 | Assessment data model       | Done   |
+| 01-02 | Sections list screen        | Done   |
+| 01-03 | Section introduction screen | Done   |
+| 01-04 | Criteria list screen        | Done   |
+| 01-05 | Criterion assessment screen | Done   |
+| 01-06 | Training screen             | Done   |
+| 01-07 | Assessment loop and state   | Done   |
 
 ## Status
 
 - Created: 2026-04-08
-- Current phase: Planning
+- Current phase: Done
+- Implementation: `5bd2812` (2026-04-08)
+- i18n: `2bef394`
+- Themes: `7eddca8`

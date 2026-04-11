@@ -4,8 +4,8 @@ _[English](./developmental-milestones-assessment.en.md)_
 
 # Оценка этапов развития
 
-Связанные истории: [Эпик 01 -- Основа оценивания](../roadmap/01-assessment-foundation/_epic.md)
-Связанные файлы: _Пока нет -- будут обновлены по мере реализации._
+Связанные истории: [Эпик 01 -- Основа оценивания](../roadmap/01-assessment-foundation/_epic.ru.md)
+Связанные файлы: `src/types/assessment.ts`, `src/i18n/translations/sections.ts`, `src/i18n/translations/introduction.ts`, `src/i18n/translations/training.ts`
 
 ---
 
