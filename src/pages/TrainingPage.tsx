@@ -1,3 +1,4 @@
+import { ListRestart, RotateCcw } from 'lucide-react'
 import { useCallback } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
@@ -71,10 +72,10 @@ export function TrainingPage() {
 
       <div className={styles.actions}>
         <Button onClick={handleRetry} {...tProps('retryAssessment')}>
-          {t('retryAssessment')}
+          <RotateCcw size={16} aria-hidden="true" /> {t('retryAssessment')}
         </Button>
         <Button variant="ghost" onClick={handleBack} {...tProps('backToList')}>
-          {t('backToList')}
+          <ListRestart size={16} aria-hidden="true" /> {t('backToList')}
         </Button>
       </div>
     </PageLayout>

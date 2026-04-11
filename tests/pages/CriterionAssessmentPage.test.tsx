@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
-import { AssessmentProvider } from '../../src/hooks'
+import { AssessmentProvider, ThemeProvider } from '../../src/hooks'
 import { LanguageProvider } from '../../src/i18n'
 import { SECTIONS_BY_LANGUAGE } from '../../src/i18n/translations'
 import { CriterionAssessmentPage } from '../../src/pages/CriterionAssessmentPage'
@@ -21,18 +21,20 @@ vi.mock('react-router-dom', async () => {
 function renderPage(sectionId = 'mand', criterionId = 'mand-1') {
   return render(
     <MemoryRouter initialEntries={[`/sections/${sectionId}/criteria/${criterionId}/assess`]}>
-      <LanguageProvider initialLanguage="en">
-        <AssessmentProvider sections={SECTIONS_BY_LANGUAGE.en}>
-          <Routes>
-            <Route
-              path="/sections/:sectionId/criteria/:criterionId/assess"
-              element={<CriterionAssessmentPage />}
-            />
-            <Route path="/sections/:sectionId/criteria" element={<div>Criteria List</div>} />
-            <Route path="/" element={<div>Home</div>} />
-          </Routes>
-        </AssessmentProvider>
-      </LanguageProvider>
+      <ThemeProvider initialTheme="warm" initialColorMode="light">
+        <LanguageProvider initialLanguage="en">
+          <AssessmentProvider sections={SECTIONS_BY_LANGUAGE.en}>
+            <Routes>
+              <Route
+                path="/sections/:sectionId/criteria/:criterionId/assess"
+                element={<CriterionAssessmentPage />}
+              />
+              <Route path="/sections/:sectionId/criteria" element={<div>Criteria List</div>} />
+              <Route path="/" element={<div>Home</div>} />
+            </Routes>
+          </AssessmentProvider>
+        </LanguageProvider>
+      </ThemeProvider>
     </MemoryRouter>
   )
 }

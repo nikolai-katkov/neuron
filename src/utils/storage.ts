@@ -1,8 +1,11 @@
 import type { Language } from '../i18n'
-import type { AssessmentState } from '../types'
+import type { AssessmentState, ColorMode, Theme } from '../types'
+import { COLOR_MODES, DEFAULT_COLOR_MODE, DEFAULT_THEME, THEMES } from '../types'
 
 const STORAGE_KEY = 'neuron-assessment-state'
 const LANGUAGE_KEY = 'neuron-language'
+const THEME_KEY = 'neuron-theme'
+const COLOR_MODE_KEY = 'neuron-color-mode'
 const DEFAULT_LANGUAGE: Language = 'ru'
 
 export function loadLanguage(): Language {
@@ -49,4 +52,36 @@ export function loadAssessmentState(): AssessmentState {
 
 export function saveAssessmentState(state: AssessmentState): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+}
+
+export function loadTheme(): Theme {
+  try {
+    const raw = localStorage.getItem(THEME_KEY)
+    if (raw && (THEMES as string[]).includes(raw)) {
+      return raw as Theme
+    }
+    return DEFAULT_THEME
+  } catch {
+    return DEFAULT_THEME
+  }
+}
+
+export function saveTheme(theme: Theme): void {
+  localStorage.setItem(THEME_KEY, theme)
+}
+
+export function loadColorMode(): ColorMode {
+  try {
+    const raw = localStorage.getItem(COLOR_MODE_KEY)
+    if (raw && (COLOR_MODES as string[]).includes(raw)) {
+      return raw as ColorMode
+    }
+    return DEFAULT_COLOR_MODE
+  } catch {
+    return DEFAULT_COLOR_MODE
+  }
+}
+
+export function saveColorMode(mode: ColorMode): void {
+  localStorage.setItem(COLOR_MODE_KEY, mode)
 }

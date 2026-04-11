@@ -79,3 +79,93 @@
   gap: var(--space-3);
   align-items: stretch;
 }
+
+/* ============================================
+ * Theme: Warm — card-style steps with overlapping number badges
+ * ============================================ */
+:global([data-theme='warm']) .stepList {
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+  padding-left: var(--space-2);
+}
+
+:global([data-theme='warm']) .stepItem {
+  position: relative;
+  padding: var(--space-5);
+  padding-top: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+}
+
+:global([data-theme='warm']) .stepItem::before {
+  position: absolute;
+  top: -14px;
+  left: -8px;
+  width: 40px;
+  height: 40px;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  background: var(--gradient-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 0;
+}
+
+/* ============================================
+ * Theme: Soft — colorful step pills
+ * ============================================ */
+:global([data-theme='soft']) .stepList {
+  padding-top: var(--space-2);
+  padding-left: var(--space-2);
+}
+
+:global([data-theme='soft']) .stepItem {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  padding-left: var(--space-12);
+  box-shadow: var(--shadow-sm);
+}
+
+:global([data-theme='soft']) .stepItem::before {
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--gradient-primary);
+  color: var(--color-text-on-primary);
+}
+
+/* ============================================
+ * Theme: Editorial — large elegant numbers
+ * ============================================ */
+:global([data-theme='editorial']) .stepItem {
+  padding-left: var(--space-16);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+:global([data-theme='editorial']) .stepItem::before {
+  width: 48px;
+  height: 48px;
+  font-size: var(--font-size-3xl);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-regular);
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 0.4em;
+}
+
+:global([data-theme='editorial']) .mistakesTitle {
+  font-family: var(--font-family-display);
+}

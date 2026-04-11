@@ -1,3 +1,4 @@
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useCallback, useState } from 'react'
 
@@ -39,6 +40,11 @@ export function ProgressiveDisclosure({
         {...tProps(isExpanded ? 'showLess' : 'readMore')}
       >
         {isExpanded ? resolvedExpandedLabel : resolvedCollapsedLabel}
+        {isExpanded ? (
+          <ChevronUp size={14} aria-hidden="true" />
+        ) : (
+          <ChevronDown size={14} aria-hidden="true" />
+        )}
       </button>
     </div>
   )

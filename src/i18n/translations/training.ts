@@ -7,11 +7,12 @@ const TRAINING_EN: Record<string, TrainingContent> = {
     shortGuide: [
       {
         stepNumber: 1,
-        instruction: 'Choose 2 items your child loves (e.g., a favorite snack and a toy).',
+        instruction: 'Choose two items that might interest your child.',
       },
       {
         stepNumber: 2,
-        instruction: 'Hold the item where your child can see it but cannot reach it.',
+        instruction:
+          'Hold the item where your child can see it but cannot reach it. For example, place it in a clear container the child cannot open on their own.',
       },
       {
         stepNumber: 3,
@@ -25,7 +26,7 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'At this stage, prompts are allowed and expected. You can use echoic prompts (saying the word for the child to repeat), imitation prompts (modeling a gesture), or show a PECS card for the child to hand to you. The goal is simply to establish that communication leads to getting desired items. Practice during natural moments when your child wants something -- mealtimes, play, getting dressed. Keep sessions short (5-10 minutes) and always end on a success. If your child does not respond after 3-5 seconds, provide the prompt again. Gradually reduce the intensity of your prompt over time as the child becomes more independent.',
+      'At this stage, prompts are allowed and expected. You can say the word for the child to repeat, model a gesture, or show a PECS card for the child to hand to you. The goal is simply to establish that communication leads to getting desired items. Practice during natural moments when your child wants something — mealtimes, play, getting dressed. Keep sessions short (5-10 minutes) and always end on a success. If your child does not respond after 3-5 seconds, provide the prompt again. Gradually reduce the intensity of your prompt over time as the child becomes more independent.',
     commonMistakes: [
       'Giving the item before the child makes any communicative attempt',
       'Using physical prompts (hand-over-hand) when non-physical prompts would work',
@@ -58,12 +59,12 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'The key difference at this level is independence -- the child should request without being prompted. This does not mean you cannot set up the environment to encourage requests. Strategies include: placing desired items in sight but out of reach, giving small portions so the child needs to ask for more, starting a favorite activity and then pausing until the child requests continuation. The object being visible is acceptable -- what matters is that the child initiates communication on their own. Track each unique request to confirm you have at least 4 different ones. Common items that work well: favorite snacks, specific toys, activities like swinging or being tickled, and media like songs or videos.',
+      'The key difference at this level is independence —the child should request without being prompted. This does not mean you cannot set up the environment to encourage requests. Strategies include: placing desired items in sight but out of reach, giving small portions so the child needs to ask for more, starting a favorite activity and then pausing until the child requests continuation. The object being visible is acceptable —what matters is that the child initiates communication on their own. Track each unique request to confirm you have at least 4 different ones. Common items that work well: favorite snacks, specific toys, activities like swinging or being tickled, and media like songs or videos.',
     commonMistakes: [
       'Asking "What do you want?" which counts as a prompt',
       'Not creating enough opportunities for the child to need to request',
       'Counting the same request multiple times instead of tracking unique requests',
-      'Expecting full sentences -- single words or clear gestures count',
+      'Expecting full sentences —single words or clear gestures count',
     ],
   },
   'mand-3': {
@@ -90,12 +91,12 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Generalization means the child can use requesting skills flexibly -- not just with one person in one place for one thing. To build this, systematically vary three dimensions: people (practice with mom, dad, grandparents, siblings, therapists), environments (home, park, store, car, classroom), and reinforcement types (food, toys, activities, social attention). Start by changing one dimension at a time. For example, if the child reliably requests with mom at home, first try with dad at home (new person, same place), then with mom at the park (same person, new place). Only change multiple dimensions once the child is comfortable with single changes. Keep a log of successful requests noting who, where, and what to track the 6 different combinations needed.',
+      'Generalization means the child can use requesting skills flexibly —not just with one person in one place for one thing. To build this, systematically vary three dimensions: people (practice with mom, dad, grandparents, siblings, therapists), environments (home, park, store, car, classroom), and reinforcement types (food, toys, activities, social attention). Start by changing one dimension at a time. For example, if the child reliably requests with mom at home, first try with dad at home (new person, same place), then with mom at the park (same person, new place). Only change multiple dimensions once the child is comfortable with single changes. Keep a log of successful requests noting who, where, and what to track the 6 different combinations needed.',
     commonMistakes: [
       'Practicing only at home with the same caregiver',
       'Changing too many variables at once (new person AND new place AND new items)',
       'Not keeping track of which combinations have been achieved',
-      'Giving up if the child struggles in a new context instead of providing temporary support',
+      'Giving up if the child struggles in a new setting instead of helping and trying again',
     ],
   },
   'mand-4': {
@@ -121,7 +122,7 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Spontaneous requesting means the child communicates a want entirely on their own initiative -- no verbal cues, no questions, no gestures from you to prompt them. To build this skill, engineer the environment to be rich with opportunities: have favorite items visible but slightly out of reach, start activities that naturally pause (e.g., a wind-up toy that stops), offer small amounts of preferred snacks so the child needs more, or play interactive games where the child needs to request "again" or "more." During the observation period, stay nearby and engaged but avoid directing the interaction. If the child makes a request, fulfill it promptly. The 60-minute window does not need to be continuous -- you can observe across a natural routine. Track each request with the time and what was requested.',
+      'Spontaneous requesting means the child communicates a want entirely on their own initiative —no verbal cues, no questions, no gestures from you to prompt them. To build this skill, engineer the environment to be rich with opportunities: have favorite items visible but slightly out of reach, start activities that naturally pause (e.g., a wind-up toy that stops), offer small amounts of preferred snacks so the child needs more, or play interactive games where the child needs to request "again" or "more." During the observation period, stay nearby and engaged but avoid directing the interaction. If the child makes a request, fulfill it promptly. The 60-minute window does not need to be continuous —you can observe across a natural routine. Track each request with the time and what was requested.',
     commonMistakes: [
       'Inadvertently prompting by looking at items or gesturing',
       'Choosing an observation time when the child is not motivated (e.g., right after a meal)',
@@ -140,7 +141,7 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       {
         stepNumber: 2,
         instruction:
-          'Identify gaps -- what motivating items has the child not yet learned to request?',
+          'Identify gaps —what motivating items has the child not yet learned to request?',
       },
       {
         stepNumber: 3,
@@ -153,7 +154,7 @@ const TRAINING_EN: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Building a repertoire of 10 independent mands requires systematically expanding beyond the child\'s current set of requests. Start by listing every item or activity the child currently requests without prompts. Then identify motivating items the child enjoys but does not yet ask for. Introduce these one at a time: first, use a prompt (echoic or model) to teach the new word or gesture, then gradually fade the prompt across sessions until the child requests independently. Good categories to expand into: foods (apple, juice, cracker), toys (ball, car, blocks), activities (swing, tickle, music), and social actions (up, open, help). Keep a running tally -- you need 10 distinct, independent requests. Remember that "What do you want?" does not count as independent. The child should initiate these requests on their own across natural opportunities.',
+      "Building a repertoire of 10 independent mands requires systematically expanding beyond the child's current set of requests. Start by listing every item or activity the child currently requests without prompts. Then identify motivating items the child enjoys but does not yet ask for. Introduce these one at a time: first, use a word or gesture, then gradually fade the prompt across sessions until the child requests independently. Good categories to expand into: foods (apple, juice, cracker), toys (ball, car, blocks), activities (swing, tickle, music), and social actions (up, open, help). Keep a running tally — you need 10 distinct, independent requests. The child should initiate these requests on their own across natural opportunities.",
     commonMistakes: [
       'Counting prompted requests as independent',
       'Teaching too many new words at once instead of one at a time',
@@ -169,17 +170,17 @@ const TRAINING_RU: Record<string, TrainingContent> = {
     shortGuide: [
       {
         stepNumber: 1,
-        instruction:
-          'Выберите 2 предмета, которые ребенок любит (например, любимый перекус и игрушку).',
+        instruction: 'Выберите два предмета, которые могут заинтересовать вашего ребенка.',
       },
       {
         stepNumber: 2,
-        instruction: 'Держите предмет так, чтобы ребенок его видел, но не мог достать.',
+        instruction:
+          'Держите предмет так, чтобы ребенок его видел, но не мог достать. Например, поместите его в прозрачный контейнер так, чтобы ребенок не смог сам его открыть.',
       },
       {
         stepNumber: 3,
         instruction:
-          'Четко произнесите название предмета (например, «печенье») и подождите, пока ребенок повторит или покажет жестом.',
+          'Четко произнесите название предмета (например, «печенье») и подождите, пока ребенок не повторит или не покажет жестом.',
       },
       {
         stepNumber: 4,
@@ -188,7 +189,7 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'На этом этапе подсказки допустимы и ожидаемы. Можно использовать эхоические подсказки (произнести слово, чтобы ребенок повторил), имитационные подсказки (показать жест) или показать карточку PECS, чтобы ребенок передал ее вам. Цель -- просто установить связь: коммуникация ведет к получению желаемого. Практикуйте в естественные моменты, когда ребенок чего-то хочет: во время еды, игры, одевания. Занятия должны быть короткими (5-10 минут) и всегда заканчиваться успехом. Если ребенок не реагирует через 3-5 секунд, повторите подсказку. Постепенно снижайте интенсивность подсказки по мере роста самостоятельности ребенка.',
+      'На этом этапе подсказки допустимы и ожидаемы. Можно произнести слово, чтобы ребенок повторил, имитационные подсказки (показать жест) или показать карточку PECS, чтобы ребенок передал ее вам. Цель — просто установить связь: коммуникация ведет к получению желаемого. Практикуйте в естественные моменты, когда ребенок чего-то хочет: во время еды, игры, одевания. Занятия должны быть короткими (5-10 минут) и всегда заканчиваться успехом. Если ребенок не реагирует через 3-5 секунд, повторите подсказку. Постепенно снижайте интенсивность подсказки по мере роста самостоятельности ребенка.',
     commonMistakes: [
       'Давать предмет до того, как ребенок попытался попросить',
       'Использовать физические подсказки (рука в руке), когда достаточно невербальных',
@@ -220,12 +221,12 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Ключевое отличие на этом уровне -- самостоятельность: ребенок должен просить без подсказок. Это не значит, что нельзя организовать среду так, чтобы стимулировать просьбы. Стратегии: располагайте желаемые предметы в поле зрения, но вне досягаемости; давайте маленькие порции, чтобы ребенку нужно было попросить еще; начинайте любимое занятие и делайте паузу, пока ребенок не попросит продолжить. Предмет может быть виден -- важно, чтобы ребенок сам инициировал коммуникацию. Отмечайте каждую уникальную просьбу, чтобы убедиться, что их минимум 4 разных. Хорошо работают: любимые перекусы, конкретные игрушки, занятия вроде качания или щекотки, и медиа вроде песен или видео.',
+      'Ключевое отличие на этом уровне —самостоятельность: ребенок должен просить без подсказок. Это не значит, что нельзя организовать среду так, чтобы стимулировать просьбы. Стратегии: располагайте желаемые предметы в поле зрения, но вне досягаемости; давайте маленькие порции, чтобы ребенку нужно было попросить еще; начинайте любимое занятие и делайте паузу, пока ребенок не попросит продолжить. Предмет может быть виден —важно, чтобы ребенок сам инициировал коммуникацию. Отмечайте каждую уникальную просьбу, чтобы убедиться, что их минимум 4 разных. Хорошо работают: любимые перекусы, конкретные игрушки, занятия вроде качания или щекотки, и медиа вроде песен или видео.',
     commonMistakes: [
-      'Спрашивать «Что ты хочешь?» -- это считается подсказкой',
+      'Спрашивать «Что ты хочешь?» —это считается подсказкой',
       'Не создавать достаточно ситуаций, когда ребенку нужно попросить',
       'Считать одну и ту же просьбу несколько раз вместо отслеживания уникальных',
-      'Ожидать полные предложения -- отдельные слова или четкие жесты тоже считаются',
+      'Ожидать полные предложения —отдельные слова или четкие жесты тоже считаются',
     ],
   },
   'mand-3': {
@@ -251,12 +252,12 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Обобщение означает, что ребенок может использовать навыки просьбы гибко -- не только с одним человеком в одном месте для одной вещи. Для этого систематически варьируйте три измерения: людей (практика с мамой, папой, бабушками, братьями/сестрами, терапистами), среды (дом, площадка, магазин, машина, класс) и виды подкрепления (еда, игрушки, занятия, социальное внимание). Начинайте с изменения одного измерения за раз. Например, если ребенок уверенно просит с мамой дома, сначала попробуйте с папой дома (новый человек, то же место), потом с мамой на площадке (тот же человек, новое место). Меняйте несколько измерений одновременно только когда ребенок освоится с одиночными изменениями. Ведите журнал успешных просьб: кто, где, что -- чтобы отслеживать нужные 6 комбинаций.',
+      'Обобщение означает, что ребенок может использовать навыки просьбы гибко —не только с одним человеком в одном месте для одной вещи. Для этого систематически варьируйте три измерения: людей (практика с мамой, папой, бабушками, братьями/сестрами, терапистами), среды (дом, площадка, магазин, машина, класс) и виды подкрепления (еда, игрушки, занятия, социальное внимание). Начинайте с изменения одного измерения за раз. Например, если ребенок уверенно просит с мамой дома, сначала попробуйте с папой дома (новый человек, то же место), потом с мамой на площадке (тот же человек, новое место). Меняйте несколько измерений одновременно только когда ребенок освоится с одиночными изменениями. Ведите журнал успешных просьб: кто, где, что —чтобы отслеживать нужные 6 комбинаций.',
     commonMistakes: [
       'Практиковать только дома с одним и тем же взрослым',
       'Менять слишком много переменных сразу (новый человек И новое место И новые предметы)',
       'Не отслеживать, какие комбинации уже достигнуты',
-      'Сдаваться, если ребенок затрудняется в новом контексте, вместо временной поддержки',
+      'Сдаваться, если ребенок затрудняется в новой обстановке, вместо того чтобы помочь и попробовать снова',
     ],
   },
   'mand-4': {
@@ -279,11 +280,11 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       },
       {
         stepNumber: 4,
-        instruction: 'Записывайте каждую спонтанную просьбу. Цель -- минимум 5 за час.',
+        instruction: 'Записывайте каждую спонтанную просьбу. Цель —минимум 5 за час.',
       },
     ],
     fullGuide:
-      'Спонтанная просьба означает, что ребенок сообщает о желании полностью по своей инициативе -- без вербальных подсказок, вопросов, жестов с вашей стороны. Для развития этого навыка создайте среду, богатую возможностями: расположите любимые предметы на виду, но чуть вне досягаемости; начинайте занятия, которые естественно останавливаются (заводная игрушка останавливается); давайте небольшие порции любимого перекуса, чтобы ребенку нужно было попросить еще; играйте в интерактивные игры, где ребенку нужно попросить «еще» или «снова». Во время наблюдения будьте рядом и вовлечены, но не направляйте взаимодействие. Если ребенок просит -- выполняйте просьбу быстро. 60-минутное окно не обязательно должно быть непрерывным -- можно наблюдать в течение привычного распорядка. Записывайте каждую просьбу с временем и содержанием.',
+      'Спонтанная просьба означает, что ребенок сообщает о желании полностью по своей инициативе —без вербальных подсказок, вопросов, жестов с вашей стороны. Для развития этого навыка создайте среду, богатую возможностями: расположите любимые предметы на виду, но чуть вне досягаемости; начинайте занятия, которые естественно останавливаются (заводная игрушка останавливается); давайте небольшие порции любимого перекуса, чтобы ребенку нужно было попросить еще; играйте в интерактивные игры, где ребенку нужно попросить «еще» или «снова». Во время наблюдения будьте рядом и вовлечены, но не направляйте взаимодействие. Если ребенок просит —выполняйте просьбу быстро. 60-минутное окно не обязательно должно быть непрерывным —можно наблюдать в течение привычного распорядка. Записывайте каждую просьбу с временем и содержанием.',
     commonMistakes: [
       'Невольно подсказывать взглядом на предметы или жестами',
       'Выбирать время наблюдения, когда ребенок не мотивирован (например, сразу после еды)',
@@ -316,7 +317,7 @@ const TRAINING_RU: Record<string, TrainingContent> = {
       },
     ],
     fullGuide:
-      'Формирование репертуара из 10 самостоятельных просьб требует систематического расширения за пределы текущего набора. Начните со списка всех предметов и занятий, которые ребенок уже просит без подсказок. Затем определите мотивирующие предметы, которые ребенок любит, но еще не просит. Вводите их по одному: сначала используйте подсказку (эхоическую или моделирование), чтобы научить новому слову или жесту, затем постепенно убирайте подсказку в течение нескольких занятий, пока ребенок не начнет просить самостоятельно. Хорошие категории для расширения: еда (яблоко, сок, крекер), игрушки (мяч, машинка, кубики), занятия (качели, щекотка, музыка) и социальные действия (вверх, открой, помоги). Ведите подсчет -- нужно 10 различных самостоятельных просьб. Помните: вопрос «Что ты хочешь?» не считается самостоятельной просьбой. Ребенок должен инициировать просьбы сам в естественных ситуациях.',
+      'Формирование репертуара из 10 самостоятельных просьб требует систематического расширения за пределы текущего набора. Начните со списка всех предметов и занятий, которые ребенок уже просит без подсказок. Затем определите мотивирующие предметы, которые ребенок любит, но еще не просит. Вводите их по одному: сначала используйте слово или жест, а затем постепенно убирайте подсказку в течение нескольких занятий, пока ребенок не начнет просить самостоятельно. Хорошие категории для расширения: еда (яблоко, сок, крекер), игрушки (мяч, машинка, кубики), занятия (качели, щекотка, музыка) и социальные действия (вверх, открой, помоги). Ведите подсчет — нужно 10 различных самостоятельных просьб. Ребенок должен инициировать просьбы сам в естественных ситуациях.',
     commonMistakes: [
       'Считать просьбы с подсказкой самостоятельными',
       'Учить слишком много новых слов одновременно вместо одного за раз',

@@ -87,11 +87,19 @@ src/
 
 ### Design System
 
-**Theme:** "Playful & Bright" — light background, teal primary (#14b8a6), violet accent (#8b5cf6), coral warm (#f97316). Rounded radii, Nunito font.
+**Multi-theme:** 3 themes (Warm & Organic, Soft & Playful, Editorial & Premium) with light/dark mode each. Default: Warm + light.
 
-**Token file:** `src/styles/tokens.css` — imported once in `main.tsx`, available globally.
+**Theme architecture:** CSS custom properties overridden via `[data-theme]` + `[data-mode]` attributes on `<html>`. Theme CSS files in `src/styles/themes/`. `ThemeProvider` context provides `theme`, `setTheme`, `colorMode`, `toggleColorMode`. Persisted in localStorage (`neuron-theme`, `neuron-color-mode`).
 
-**Token categories:** Colors (primary, accent, warm, semantic, neutral, overlay), shadows, spacing (4px grid), border radius, typography (Nunito primary, IBM Plex Mono), transitions, blur.
+**Each theme has:** Unique font pairing, color palette, shape language (border-radius), shadow style, gradient tokens, animation easing, layout variations (via `:global([data-theme])` CSS selectors and conditional JSX), and decorative elements (CSS pseudo-elements).
+
+**Icons:** Lucide React (`lucide-react`) — tree-shakeable line icons throughout the UI.
+
+**Token file:** `src/styles/tokens.css` — imported once in `main.tsx`, available globally. Theme overrides in `src/styles/themes/{warm,soft,editorial}.css`.
+
+**Token categories:** Colors (primary, accent, warm, semantic, neutral, overlay), gradients (`--gradient-bg`, `--gradient-primary`), shadows, spacing (4px grid), border radius, typography, transitions, blur, animation timing, layout tokens.
+
+**ControlsPill:** Floating combined control (language switcher + dark mode toggle + theme swatches) in bottom-right. Collapsible on mobile. Rendered in `App.tsx` outside routes.
 
 ### Internationalization (i18n)
 

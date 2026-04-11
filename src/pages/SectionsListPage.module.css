@@ -26,12 +26,20 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-display);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   margin: 0;
   letter-spacing: var(--letter-spacing-tight);
+}
+
+.sectionIcon {
+  display: inline-flex;
+  color: var(--color-primary);
 }
 
 .sectionSubtitle {
@@ -55,4 +63,160 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   white-space: nowrap;
+}
+
+/* ============================================
+ * Theme: Warm — centered, icon above title
+ * ============================================ */
+:global([data-theme='warm']) .sectionTitle {
+  flex-direction: column;
+  text-align: center;
+}
+
+:global([data-theme='warm']) .sectionIcon {
+  font-size: var(--font-size-2xl);
+}
+
+:global([data-theme='warm']) .cardHeader {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+:global([data-theme='warm']) .sectionSubtitle {
+  text-align: center;
+}
+
+:global([data-theme='warm']) .sectionList {
+  position: relative;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+:global([data-theme='warm']) .sectionList::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%;
+  background: linear-gradient(135deg, rgba(194, 112, 62, 0.1), rgba(212, 148, 58, 0.06));
+  z-index: -1;
+  pointer-events: none;
+}
+
+:global([data-theme='warm']) .sectionList::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 40% 60% 45% 55% / 55% 40% 60% 45%;
+  background: linear-gradient(200deg, rgba(124, 148, 115, 0.08), rgba(194, 112, 62, 0.05));
+  z-index: -1;
+  pointer-events: none;
+}
+
+:global([data-theme='warm']) .subtitle {
+  text-align: center;
+  position: relative;
+}
+
+:global([data-theme='warm']) .subtitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: var(--space-4) auto 0;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  opacity: 0.5;
+}
+
+/* ============================================
+ * Theme: Soft — centered, playful
+ * ============================================ */
+:global([data-theme='soft']) .cardHeader {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+:global([data-theme='soft']) .sectionSubtitle {
+  text-align: center;
+}
+
+:global([data-theme='soft']) .sectionTitle {
+  font-size: var(--font-size-xl);
+}
+
+:global([data-theme='soft']) .subtitle {
+  text-align: center;
+  position: relative;
+}
+
+:global([data-theme='soft']) .subtitle::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: var(--space-4) auto 0;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  opacity: 0.4;
+}
+
+:global([data-theme='soft']) .sectionList {
+  position: relative;
+}
+
+:global([data-theme='soft']) .sectionList::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: rgba(109, 197, 176, 0.1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+:global([data-theme='soft']) .sectionList::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -15px;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background: rgba(155, 125, 212, 0.08);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================
+ * Theme: Editorial — borderless typographic list
+ * ============================================ */
+:global([data-theme='editorial']) .sectionTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-snug);
+}
+
+:global([data-theme='editorial']) .sectionList {
+  gap: var(--space-6);
+}
+
+:global([data-theme='editorial']) .subtitle {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-display);
+  line-height: 1.6;
+  max-width: 480px;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
 }

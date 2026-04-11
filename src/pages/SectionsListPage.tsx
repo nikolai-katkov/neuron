@@ -1,3 +1,4 @@
+import { MessageCircle, Tag } from 'lucide-react'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -6,6 +7,11 @@ import { useAssessment, useLanguage } from '../hooks'
 import { tProps } from '../i18n'
 import type { Section } from '../types'
 import styles from './SectionsListPage.module.css'
+
+const SECTION_ICONS: Record<string, React.ReactNode> = {
+  mand: <MessageCircle size={20} aria-hidden="true" />,
+  tact: <Tag size={20} aria-hidden="true" />,
+}
 
 function SectionCard({ section }: { section: Section }) {
   const navigate = useNavigate()
@@ -22,7 +28,12 @@ function SectionCard({ section }: { section: Section }) {
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>
           <div>
-            <h2 className={styles.sectionTitle}>{section.title}</h2>
+            <h2 className={styles.sectionTitle}>
+              {SECTION_ICONS[section.id] ? (
+                <span className={styles.sectionIcon}>{SECTION_ICONS[section.id]}</span>
+              ) : null}
+              {section.title}
+            </h2>
             <p className={styles.sectionSubtitle}>
               {section.isAvailable ? (
                 section.subtitle

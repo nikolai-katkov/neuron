@@ -4,17 +4,14 @@
  * All color, typography, spacing, and animation tokens are defined here.
  * Import this file once in main.tsx to make tokens available globally.
  *
- * Theme: "Playful & Bright" — light background, colorful accents, rounded shapes.
- *
  * Theme Architecture:
- * Tokens are defined on both :root and [data-theme='light'] selectors.
- * :root provides the default (light) theme. To add a dark theme,
- * create a [data-theme='dark'] block overriding the color tokens.
+ * Base tokens on :root provide defaults. Theme CSS files override tokens
+ * via [data-theme='warm|modern|soft|editorial'] selectors.
+ * Components use tokens via var() — theme changes cascade automatically.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-[data-theme='light'],
 :root {
   /* ============================================
    * Colors - Background
@@ -74,11 +71,13 @@
   --color-warm: #f97316;
   --color-warm-bright: #fb923c;
   --color-warm-dim: rgba(249, 115, 22, 0.12);
+  --color-warm-alpha-10: rgba(249, 115, 22, 0.1);
 
   /* ============================================
    * Colors - Semantic
    * ============================================ */
   --color-success: #22c55e;
+  --color-success-alpha-10: rgba(34, 197, 94, 0.1);
   --color-warning: #eab308;
   --color-danger: #ef4444;
 
@@ -194,6 +193,63 @@
    * ============================================ */
   --blur-sm: 4px;
   --blur-md: 12px;
+
+  /* ============================================
+   * Font Aliases (theme-overridable)
+   * ============================================ */
+  --font-primary: var(--font-family-primary);
+  --font-mono: var(--font-family-mono);
+  --font-family-display: var(--font-family-primary);
+  --font-family-body: var(--font-family-primary);
+
+  /* ============================================
+   * Layout
+   * ============================================ */
+  --layout-max-width: 640px;
+  --space-page-x: var(--space-4);
+  --space-page-y: var(--space-6);
+  --touch-target-min: 40px;
+
+  /* ============================================
+   * Theme-overridable Shape
+   * ============================================ */
+  --radius-card: var(--radius-xl);
+  --radius-button: var(--radius-lg);
+  --shadow-card: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-md);
+  --button-border-width: 2px;
+
+  /* ============================================
+   * Gradients (theme-overridable)
+   * ============================================ */
+  --gradient-bg: none;
+  --gradient-primary: var(--color-primary);
+  --gradient-accent: var(--color-accent);
+
+  /* ============================================
+   * Header Layout
+   * ============================================ */
+  --header-text-align: left;
+
+  /* ============================================
+   * Animation (theme-overridable)
+   * ============================================ */
+  --animation-duration: 0.4s;
+  --animation-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --hover-lift: -1px;
+  --hover-scale: 1;
+
+  /* ============================================
+   * Controls Pill
+   * ============================================ */
+  --controls-bg: rgba(255, 255, 255, 0.85);
+  --controls-border: var(--color-border);
+
+  /* ============================================
+   * A11y
+   * ============================================ */
+  --color-text-on-primary: #ffffff;
+  --color-focus-ring: var(--color-primary);
 }
 
 /* ============================================
@@ -205,9 +261,49 @@
 
 body {
   margin: 0;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image: var(--gradient-bg);
+  background-attachment: fixed;
   color: var(--color-text);
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+/* ============================================
+ * Mobile Breakpoint
+ * ============================================ */
+@media (max-width: 640px) {
+  :root {
+    --layout-max-width: 100%;
+    --space-page-x: var(--space-5);
+    --touch-target-min: 44px;
+    --font-size-2xl: 1.375rem;
+    --font-size-3xl: 1.625rem;
+    --font-size-4xl: 2rem;
+  }
+}
+
+/* ============================================
+ * Reduced Motion
+ * ============================================ */
+/* ============================================
+ * Reduced Motion
+ * ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0s;
+    --transition-base: 0s;
+    --transition-slow: 0s;
+    --animation-duration: 0.01s;
+    --hover-lift: 0;
+    --hover-scale: 1;
+  }
+
+  body {
+    transition: none;
+  }
 }

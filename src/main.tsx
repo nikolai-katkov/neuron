@@ -1,4 +1,7 @@
 import './styles/tokens.css'
+import './styles/themes/warm.css'
+import './styles/themes/soft.css'
+import './styles/themes/editorial.css'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { ScrollToTop } from './components/ScrollToTop'
-import { AssessmentProvider, useLanguage } from './hooks'
+import { ControlsPill } from './components/ui'
+import { AssessmentProvider, ThemeProvider, useLanguage } from './hooks'
 import { LanguageProvider } from './i18n'
 import { CriteriaListPage } from './pages/CriteriaListPage'
 import { CriterionAssessmentPage } from './pages/CriterionAssessmentPage'
@@ -33,10 +34,13 @@ function AppRoutes() {
 export function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <LanguageProvider>
-        <AppRoutes />
-      </LanguageProvider>
+      <ThemeProvider>
+        <ScrollToTop />
+        <LanguageProvider>
+          <AppRoutes />
+          <ControlsPill />
+        </LanguageProvider>
+      </ThemeProvider>
     </BrowserRouter>
   )
 }

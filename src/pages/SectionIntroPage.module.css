@@ -56,3 +56,52 @@
   gap: var(--space-3);
   align-items: center;
 }
+
+/* ============================================
+ * Theme: Warm — centered, generous
+ * ============================================ */
+:global([data-theme='warm']) .sectionSubtitle {
+  text-align: center;
+}
+
+:global([data-theme='warm']) .actions {
+  justify-content: center;
+}
+
+/* ============================================
+ * Theme: Soft — playful bullets
+ * ============================================ */
+:global([data-theme='soft']) .bulletItem::before {
+  background: var(--gradient-primary);
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
+:global([data-theme='soft']) .sectionSubtitle {
+  text-align: center;
+}
+
+:global([data-theme='soft']) .actions {
+  justify-content: center;
+}
+
+/* ============================================
+ * Theme: Editorial — large subtitle, refined
+ * ============================================ */
+:global([data-theme='editorial']) .sectionSubtitle {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-display);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+:global([data-theme='editorial']) .fullExplanation {
+  max-width: 520px;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+}
+
+:global([data-theme='editorial']) .bulletItem {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}

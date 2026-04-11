@@ -9,6 +9,9 @@
   font-weight: var(--font-weight-semibold);
   line-height: 1.4;
   white-space: nowrap;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
 }
 
 .NotStarted {

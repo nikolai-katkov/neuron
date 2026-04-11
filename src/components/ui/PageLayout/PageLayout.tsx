@@ -1,10 +1,10 @@
+import { ArrowLeft } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { useLanguage } from '../../../hooks'
 import { tProps } from '../../../i18n'
-import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher'
 import styles from './PageLayout.module.css'
 
 interface PageLayoutProps {
@@ -29,22 +29,17 @@ export function PageLayout({ children, title, hasBackButton = false, backPath }:
   return (
     <main className={styles.layout}>
       <header className={styles.header}>
-        <div className={styles.headerRow}>
-          {hasBackButton ? (
-            <button
-              className={styles.backButton}
-              onClick={handleBack}
-              type="button"
-              aria-label={t('goBack')}
-              {...tProps('back')}
-            >
-              &#8592; {t('back')}
-            </button>
-          ) : (
-            <div />
-          )}
-          <LanguageSwitcher />
-        </div>
+        {hasBackButton ? (
+          <button
+            className={styles.backButton}
+            onClick={handleBack}
+            type="button"
+            aria-label={t('goBack')}
+            {...tProps('back')}
+          >
+            <ArrowLeft size={16} aria-hidden="true" /> {t('back')}
+          </button>
+        ) : null}
         {title ? <h1 className={styles.title}>{title}</h1> : null}
       </header>
       <div className={styles.content}>{children}</div>

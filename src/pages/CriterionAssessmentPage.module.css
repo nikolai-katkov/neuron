@@ -1,3 +1,22 @@
+/* ============================================
+ * Base layout
+ * ============================================ */
+.assessmentLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.mediaArea {
+  width: 100%;
+}
+
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
 .illustrationPlaceholder {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -7,6 +26,9 @@
   background-color: var(--color-elevated);
   border-radius: var(--radius-lg);
   border: 1px dashed var(--color-border);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .placeholderLabel {
@@ -17,13 +39,14 @@
 }
 
 .question {
-  font-family: var(--font-primary);
+  font-family: var(--font-family-display);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   margin: 0;
   line-height: 1.3;
   letter-spacing: var(--letter-spacing-tight);
+  transition: color var(--transition-base);
 }
 
 .context {
@@ -31,6 +54,9 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .contextTitle {
@@ -89,4 +115,68 @@
 
 .actions > * {
   flex: 1;
+}
+
+@media (max-width: 640px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+ * Theme: Warm — centered, full-width hero
+ * ============================================ */
+.layout_warm .question {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+}
+
+.layout_warm .actions {
+  flex-direction: column;
+}
+
+.layout_warm .context {
+  border-radius: var(--radius-2xl);
+}
+
+/* ============================================
+ * Theme: Soft — floating, centered
+ * ============================================ */
+.layout_soft .question {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+}
+
+.layout_soft .context {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: none;
+}
+
+.layout_soft .illustrationPlaceholder {
+  border-radius: var(--radius-xl);
+}
+
+/* ============================================
+ * Theme: Editorial — typography hero
+ * ============================================ */
+.layout_editorial .question {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+  margin-top: var(--space-4);
+}
+
+.layout_editorial .illustrationPlaceholder {
+  aspect-ratio: 3 / 1;
+  border-radius: 2px;
+}
+
+.layout_editorial .context {
+  border-radius: 2px;
+  border-color: var(--color-border-strong);
+}
+
+.layout_editorial .actions {
+  gap: var(--space-4);
 }

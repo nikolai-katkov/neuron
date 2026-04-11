@@ -1,9 +1,11 @@
 .card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   padding: var(--space-5);
+  box-shadow: var(--shadow-card);
   transition:
+    background-color var(--transition-base),
     box-shadow var(--transition-fast),
     border-color var(--transition-fast),
     transform var(--transition-fast);
@@ -14,9 +16,9 @@
 }
 
 .clickable:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card-hover);
   border-color: var(--color-primary-alpha-20);
-  transform: translateY(-1px);
+  transform: translateY(var(--hover-lift)) scale(var(--hover-scale));
 }
 
 .clickable:active {
@@ -32,4 +34,15 @@
 .disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Theme: Soft - bouncy hover */
+:global([data-theme='soft']) .clickable:hover {
+  transform: translateY(var(--hover-lift)) scale(var(--hover-scale));
+}
+
+/* Theme: Editorial - elegant, more padding, no shadow */
+:global([data-theme='editorial']) .card {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-strong);
 }

@@ -4,8 +4,9 @@
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  border: 2px solid transparent;
-  border-radius: var(--radius-lg);
+  min-height: var(--touch-target-min);
+  border: var(--button-border-width) solid transparent;
+  border-radius: var(--radius-button);
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
@@ -24,13 +25,16 @@
 }
 
 .primary {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
+  background: var(--gradient-primary);
+  color: var(--color-text-on-primary);
+  border-color: transparent;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 
 .primary:hover:not(:disabled) {
-  background-color: var(--color-primary-bright);
-  box-shadow: var(--shadow-primary-sm);
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-primary-md);
 }
 
 .primary:active:not(:disabled) {
@@ -65,4 +69,29 @@
 
 .ghost:active:not(:disabled) {
   background-color: var(--color-surface);
+}
+
+/* Theme: Warm - soft press */
+:global([data-theme='warm']) .button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Theme: Soft - bouncy press */
+:global([data-theme='soft']) .button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Theme: Editorial - refined */
+:global([data-theme='editorial']) .primary {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+:global([data-theme='editorial']) .secondary {
+  border-color: var(--color-text-muted);
+}
+
+:global([data-theme='editorial']) .secondary:hover:not(:disabled) {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background-color: transparent;
 }

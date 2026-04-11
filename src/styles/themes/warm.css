@@ -1,0 +1,158 @@
+/**
+ * Warm & Organic Theme
+ * Cozy, nurturing, handcrafted.
+ * Fonts: Quicksand (display) + Nunito (body)
+ * Palette: cream, terracotta, sage, honey
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+/* ============================================
+ * Light Mode
+ * ============================================ */
+[data-theme='warm'] {
+  /* Background */
+  --color-bg: #f3e4d4;
+  --color-surface: #fffaf5;
+  --color-elevated: #f0dcc8;
+
+  /* Gradients */
+  --gradient-bg: radial-gradient(ellipse at 20% 10%, #fdf0e4 0%, #e8d0b8 100%);
+  --gradient-primary: linear-gradient(135deg, #c2703e, #d4943a);
+  --gradient-accent: linear-gradient(135deg, #7c9473, #a8c49e);
+
+  /* Border */
+  --color-border: rgba(61, 44, 30, 0.12);
+  --color-border-strong: rgba(61, 44, 30, 0.22);
+
+  /* Text */
+  --color-text: #3d2c1e;
+  --color-text-dim: #7a6555;
+  --color-text-muted: #a89585;
+  --color-text-on-primary: #ffffff;
+
+  /* Primary (Terracotta) */
+  --color-primary: #c2703e;
+  --color-primary-bright: #d4895a;
+  --color-primary-dim: rgba(194, 112, 62, 0.15);
+  --color-primary-alpha-5: rgba(194, 112, 62, 0.05);
+  --color-primary-alpha-10: rgba(194, 112, 62, 0.1);
+  --color-primary-alpha-15: rgba(194, 112, 62, 0.15);
+  --color-primary-alpha-20: rgba(194, 112, 62, 0.2);
+  --color-primary-alpha-30: rgba(194, 112, 62, 0.3);
+  --color-primary-alpha-40: rgba(194, 112, 62, 0.4);
+  --color-primary-alpha-50: rgba(194, 112, 62, 0.5);
+
+  /* Accent (Sage) */
+  --color-accent: #7c9473;
+  --color-accent-bright: #94ad8a;
+  --color-accent-dim: rgba(124, 148, 115, 0.12);
+
+  /* Warm (Honey) */
+  --color-warm: #d4943a;
+  --color-warm-bright: #e0a854;
+  --color-warm-dim: rgba(212, 148, 58, 0.12);
+  --color-warm-alpha-10: rgba(212, 148, 58, 0.1);
+
+  /* Semantic */
+  --color-success: #22c55e;
+  --color-success-alpha-10: rgba(34, 197, 94, 0.1);
+
+  /* Neutral */
+  --color-neutral: rgba(90, 75, 60, 0.6);
+  --color-neutral-dim: rgba(90, 75, 60, 0.35);
+  --color-neutral-muted: rgba(90, 75, 60, 0.15);
+  --color-neutral-bg: rgba(90, 75, 60, 0.06);
+
+  /* Shadows - warm, prominent */
+  --shadow-sm: 0 1px 4px rgba(140, 90, 50, 0.12), 0 1px 2px rgba(140, 90, 50, 0.08);
+  --shadow-md: 0 4px 16px rgba(140, 90, 50, 0.14), 0 2px 4px rgba(140, 90, 50, 0.08);
+  --shadow-lg: 0 8px 32px rgba(140, 90, 50, 0.18), 0 4px 8px rgba(140, 90, 50, 0.08);
+  --shadow-primary-sm: 0 2px 10px rgba(194, 112, 62, 0.2);
+  --shadow-primary-md: 0 4px 18px rgba(194, 112, 62, 0.28);
+
+  /* Typography */
+  --font-family-display: 'Quicksand', 'Nunito', -apple-system, system-ui, sans-serif;
+  --font-family-body: 'Nunito', -apple-system, system-ui, sans-serif;
+  --font-primary: var(--font-family-body);
+
+  /* Shape */
+  --radius-card: var(--radius-2xl);
+  --radius-button: var(--radius-full);
+  --shadow-card: 0 2px 10px rgba(140, 90, 50, 0.1);
+  --shadow-card-hover: 0 8px 28px rgba(140, 90, 50, 0.16);
+
+  /* Header */
+  --header-text-align: center;
+
+  /* Animation */
+  --animation-duration: 0.5s;
+  --animation-easing: cubic-bezier(0.23, 1, 0.32, 1);
+  --hover-lift: -2px;
+  --hover-scale: 1;
+
+  /* Controls */
+  --controls-bg: rgba(243, 228, 212, 0.92);
+  --controls-border: rgba(194, 112, 62, 0.15);
+  --color-focus-ring: var(--color-primary);
+}
+
+/* ============================================
+ * Dark Mode
+ * ============================================ */
+[data-theme='warm'][data-mode='dark'] {
+  --color-bg: #1e1410;
+  --color-surface: #2c1e14;
+  --color-elevated: #3a2a1e;
+
+  --gradient-bg: radial-gradient(ellipse at 20% 10%, #2c1e14 0%, #140e08 100%);
+  --gradient-primary: linear-gradient(135deg, #d4895a, #e0a854);
+
+  --color-border: rgba(240, 230, 220, 0.08);
+  --color-border-strong: rgba(240, 230, 220, 0.15);
+
+  --color-text: #f0e6dc;
+  --color-text-dim: #c4b5a5;
+  --color-text-muted: #8a7d70;
+  --color-text-on-primary: #1e1410;
+
+  --color-primary: #d4895a;
+  --color-primary-bright: #e0a070;
+  --color-primary-dim: rgba(212, 137, 90, 0.15);
+  --color-primary-alpha-5: rgba(212, 137, 90, 0.05);
+  --color-primary-alpha-10: rgba(212, 137, 90, 0.1);
+  --color-primary-alpha-15: rgba(212, 137, 90, 0.15);
+  --color-primary-alpha-20: rgba(212, 137, 90, 0.2);
+  --color-primary-alpha-30: rgba(212, 137, 90, 0.3);
+  --color-primary-alpha-40: rgba(212, 137, 90, 0.4);
+  --color-primary-alpha-50: rgba(212, 137, 90, 0.5);
+
+  --color-accent: #94ad8a;
+  --color-accent-bright: #a8c49e;
+  --color-accent-dim: rgba(148, 173, 138, 0.12);
+
+  --color-warm: #e0a854;
+  --color-warm-bright: #ecc07a;
+  --color-warm-dim: rgba(224, 168, 84, 0.12);
+  --color-warm-alpha-10: rgba(224, 168, 84, 0.1);
+
+  --color-success: #4ade80;
+  --color-success-alpha-10: rgba(74, 222, 128, 0.12);
+
+  --color-neutral: rgba(200, 185, 170, 0.5);
+  --color-neutral-dim: rgba(200, 185, 170, 0.3);
+  --color-neutral-muted: rgba(200, 185, 170, 0.12);
+  --color-neutral-bg: rgba(200, 185, 170, 0.06);
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-primary-sm: 0 2px 10px rgba(212, 137, 90, 0.2);
+  --shadow-primary-md: 0 4px 18px rgba(212, 137, 90, 0.3);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 8px 28px rgba(0, 0, 0, 0.3);
+
+  --controls-bg: rgba(30, 20, 16, 0.92);
+  --controls-border: rgba(212, 137, 90, 0.18);
+  --color-focus-ring: var(--color-primary);
+}

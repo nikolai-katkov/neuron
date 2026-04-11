@@ -4,11 +4,30 @@
   background-color: var(--color-elevated);
   border-radius: var(--radius-full);
   overflow: hidden;
+  transition: background-color var(--transition-base);
 }
 
 .fill {
   height: 100%;
-  background-color: var(--color-primary);
+  background: var(--gradient-primary);
   border-radius: var(--radius-full);
   transition: width var(--transition-slow);
+  animation: fillGrow var(--animation-duration) var(--animation-easing) both;
+}
+
+@keyframes fillGrow {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Theme: Editorial - ultra-thin, elegant */
+:global([data-theme='editorial']) .track {
+  height: 3px;
+  background-color: var(--color-border-strong);
 }

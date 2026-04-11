@@ -40,4 +40,19 @@ export interface UiTranslations {
   goHome: string
   // Language switcher
   switchLanguage: string
+  // Controls pill
+  selectTheme: string
+  selectLanguage: string
+  themeWarm: string
+  themeWarmDesc: string
+  themeSoft: string
+  themeSoftDesc: string
+  themeEditorial: string
+  themeEditorialDesc: string
+  appControls: string
+  toggleDarkMode: string
+  lightMode: string
+  darkMode: string
+  expandControls: string
+  collapseControls: string
 }

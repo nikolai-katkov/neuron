@@ -7,4 +7,6 @@ export type {
 } from './assessment'
 export type { SectionIntroduction } from './introduction'
 export type { AssessmentState, CriterionState } from './state'
+export type { ColorMode, Theme, ThemeMetadata } from './theme'
+export { COLOR_MODES, DEFAULT_COLOR_MODE, DEFAULT_THEME, THEME_METADATA, THEMES } from './theme'
 export type { TrainingContent, TrainingStep } from './training'
