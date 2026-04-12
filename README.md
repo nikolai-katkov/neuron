@@ -13,16 +13,19 @@ npm run dev    # start dev server at http://localhost:5173
 
 ## Commands
 
-| Command            | Description                       |
-| ------------------ | --------------------------------- |
-| `npm run dev`      | Start dev server (localhost:5173) |
-| `npm run build`    | Production build                  |
-| `npm run preview`  | Preview production build          |
-| `npm test`         | Run unit tests (Vitest)           |
-| `npm run test:e2e` | Run E2E tests (Playwright)        |
-| `npm run test:all` | Run unit + E2E tests              |
-| `npm run lint`     | ESLint with auto-fix              |
-| `npm run format`   | Prettier format                   |
+| Command                | Description                             |
+| ---------------------- | --------------------------------------- |
+| `npm run dev`          | Start dev server (localhost:5173)       |
+| `npm run build`        | Production build                        |
+| `npm run preview`      | Preview production build                |
+| `npm test`             | Run unit tests (Vitest)                 |
+| `npm run test:e2e`     | Run E2E tests (Playwright)              |
+| `npm run test:all`     | Run unit + E2E tests                    |
+| `npm run lint`         | ESLint with auto-fix                    |
+| `npm run format`       | Prettier format                         |
+| `npm run cdk -- <cmd>` | Run any CDK command (profile included)  |
+| `npm run diff`         | Build + preview infrastructure changes  |
+| `npm run deploy`       | Build + deploy to AWS (S3 + CloudFront) |
 
 ## Tech Stack
 

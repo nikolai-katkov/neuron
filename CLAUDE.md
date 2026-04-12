@@ -29,6 +29,9 @@ npm run test:e2e -- --project=desktop|tablet|mobile
 npm run test:all         # Unit + E2E
 npm run lint             # ESLint auto-fix
 npm run format           # Prettier format
+npm run cdk -- <cmd>     # Any CDK command (--profile mom-aba included)
+npm run diff             # Build + preview infrastructure changes
+npm run deploy           # Build + deploy to AWS (S3 + CloudFront)
 ```
 
 ## Story Documentation Updates
