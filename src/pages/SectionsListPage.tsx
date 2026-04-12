@@ -34,22 +34,22 @@ function SectionCard({ section }: { section: Section }) {
     <Card isDisabled={!section.isAvailable} onClick={handleClick}>
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>
-          <div>
+          <div className={styles.titleRow}>
             <h2 className={styles.sectionTitle}>
               {SECTION_ICONS[section.id] ? (
                 <span className={styles.sectionIcon}>{SECTION_ICONS[section.id]}</span>
               ) : null}
               {section.title}
             </h2>
-            <p className={styles.sectionSubtitle}>
-              {section.isAvailable ? (
-                section.subtitle
-              ) : (
-                <span {...tProps('comingSoon')}>{t('comingSoon')}</span>
-              )}
-            </p>
+            {section.isAvailable ? <StatusBadge status={progress.status} /> : null}
           </div>
-          {section.isAvailable ? <StatusBadge status={progress.status} /> : null}
+          <p className={styles.sectionSubtitle}>
+            {section.isAvailable ? (
+              section.subtitle
+            ) : (
+              <span {...tProps('comingSoon')}>{t('comingSoon')}</span>
+            )}
+          </p>
         </div>
         {section.isAvailable ? (
           <div className={styles.progressArea}>
@@ -68,7 +68,7 @@ export function SectionsListPage() {
   const { t, sections } = useLanguage()
 
   return (
-    <PageLayout title={t('appTitle')}>
+    <PageLayout title={t('appTitle')} wide>
       <p className={styles.subtitle} {...tProps('appSubtitle')}>
         {t('appSubtitle')}
       </p>

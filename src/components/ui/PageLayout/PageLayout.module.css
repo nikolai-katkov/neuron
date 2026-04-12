@@ -4,6 +4,16 @@
   padding: var(--space-page-y) var(--space-page-x);
 }
 
+.wide {
+  max-width: 960px;
+}
+
+@media (max-width: 640px) {
+  .wide {
+    max-width: 100%;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;

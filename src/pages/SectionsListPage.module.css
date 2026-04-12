@@ -7,22 +7,30 @@
 }
 
 .sectionList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--space-4);
 }
 
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
+  height: 100%;
 }
 
 .cardHeader {
   display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .sectionTitle {
@@ -40,6 +48,7 @@
 .sectionIcon {
   display: inline-flex;
   color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .sectionSubtitle {
@@ -48,13 +57,13 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   margin: 0;
-  margin-top: var(--space-1);
 }
 
 .progressArea {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  margin-top: auto;
 }
 
 .progressLabel {
@@ -66,31 +75,15 @@
 }
 
 /* ============================================
- * Theme: Warm — centered, icon above title
+ * Theme: Warm — centered, icon prominent
  * ============================================ */
-:global([data-theme='warm']) .sectionTitle {
-  flex-direction: column;
-  text-align: center;
+:global([data-theme='warm']) .sectionList {
+  position: relative;
+  gap: var(--space-4);
 }
 
 :global([data-theme='warm']) .sectionIcon {
   font-size: var(--font-size-2xl);
-}
-
-:global([data-theme='warm']) .cardHeader {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-:global([data-theme='warm']) .sectionSubtitle {
-  text-align: center;
-}
-
-:global([data-theme='warm']) .sectionList {
-  position: relative;
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
 }
 
 :global([data-theme='warm']) .sectionList::before {
@@ -138,16 +131,6 @@
 /* ============================================
  * Theme: Soft — centered, playful
  * ============================================ */
-:global([data-theme='soft']) .cardHeader {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-:global([data-theme='soft']) .sectionSubtitle {
-  text-align: center;
-}
-
 :global([data-theme='soft']) .sectionTitle {
   font-size: var(--font-size-xl);
 }
@@ -199,7 +182,7 @@
 }
 
 /* ============================================
- * Theme: Editorial — borderless typographic list
+ * Theme: Editorial — typographic grid
  * ============================================ */
 :global([data-theme='editorial']) .sectionTitle {
   font-family: var(--font-family-display);
@@ -209,7 +192,7 @@
 }
 
 :global([data-theme='editorial']) .sectionList {
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
 :global([data-theme='editorial']) .subtitle {
@@ -219,4 +202,28 @@
   max-width: 480px;
   padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--color-border);
+}
+
+/* ============================================
+ * Mobile: single column
+ * ============================================ */
+@media (max-width: 640px) {
+  .sectionList {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-base);
+  }
+
+  .sectionSubtitle {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 400px) {
+  .sectionList {
+    grid-template-columns: 1fr;
+  }
 }
