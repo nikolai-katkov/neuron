@@ -3,4 +3,5 @@ export interface SectionIntroduction {
   shortBullets: string[]
   fullExplanation: string
   videoPlaceholderLabel: string
+  videoSrc?: string
 }

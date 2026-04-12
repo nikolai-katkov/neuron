@@ -18,3 +18,15 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
 }
+
+.videoWrapper {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}

@@ -44,7 +44,7 @@ export function SectionIntroPage() {
     <PageLayout title={section.title} breadcrumbs={breadcrumbs}>
       <p className={styles.sectionSubtitle}>{section.subtitle}</p>
 
-      <VideoPlaceholder label={introduction.videoPlaceholderLabel} />
+      <VideoPlaceholder label={introduction.videoPlaceholderLabel} src={introduction.videoSrc} />
 
       <ul className={styles.bulletList}>
         {introduction.shortBullets.map(bullet => (
