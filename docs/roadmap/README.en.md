@@ -38,3 +38,5 @@ Development status and story sequence for Mom ABA.
 | 05-14 | [Training page integration](05-tact-section/05-14-training-page-integration.en.md)                      | Done   | Practice words section from personal dictionary                                 |
 | 05-15 | [i18n dictionary strings](05-tact-section/05-15-i18n-dictionary-strings.en.md)                          | Done   | Dictionary/onboarding UI strings + vocabulary translations                      |
 | 05-16 | [Dictionary tests](05-tact-section/05-16-dictionary-tests.en.md)                                        | Done   | Unit tests for dictionary model, hook, vocabulary data                          |
+| 06    | **[Assessment-Dictionary Integration](06-assessment-dictionary-integration/_epic.en.md)**               | WIP    | Assessment results inform dictionary state and vice versa                       |
+| 06-01 | [Practice card gestures](06-assessment-dictionary-integration/06-01-practice-card-gestures.en.md)       | Done   | 4-direction swipe, velocity physics, zone overlays, cancel gesture              |

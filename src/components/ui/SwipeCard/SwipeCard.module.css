@@ -23,12 +23,39 @@
 }
 
 /* ============================================
+ * Zone overlay (visible during drag)
+ * ============================================ */
+
+.zoneOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoneLabel {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-surface);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  opacity: 0.9;
+}
+
+/* ============================================
  * Theme: Warm
  * ============================================ */
 
 :global([data-theme='warm']) .card {
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-lg);
+}
+
+:global([data-theme='warm']) .zoneLabel {
+  font-family: var(--font-family-display);
 }
 
 /* ============================================
@@ -49,12 +76,7 @@
   border: 1px solid var(--color-border);
 }
 
-/* ============================================
- * Reduced motion
- * ============================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none !important;
-  }
+:global([data-theme='editorial']) .zoneLabel {
+  font-family: var(--font-family-display);
+  letter-spacing: var(--letter-spacing-snug);
 }

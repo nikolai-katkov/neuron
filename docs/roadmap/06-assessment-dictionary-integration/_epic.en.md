@@ -14,9 +14,11 @@ Connect the assessment flow with the personal dictionary so that assessment resu
 
 ## Stories
 
-_To be refined._
+| #     | Story                                                              | Status |
+| ----- | ------------------------------------------------------------------ | ------ |
+| 06-01 | [Practice card gesture system](06-01-practice-card-gestures.en.md) | Done   |
 
 ## Status
 
 - Created: 2026-04-12
-- Current phase: Planned
+- Current phase: In Progress

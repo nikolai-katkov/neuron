@@ -15,6 +15,8 @@
   width: 100%;
   min-height: 320px;
   margin-bottom: var(--space-8);
+  z-index: var(--z-sticky);
+  touch-action: none;
 }
 
 /* ============================================

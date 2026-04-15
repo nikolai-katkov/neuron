@@ -1,8 +1,8 @@
 import { ChevronDown, ChevronUp, Hand, ThumbsUp, X } from 'lucide-react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
-import type { BreadcrumbItem } from '../components/ui'
+import type { BreadcrumbItem, SwipeCardHandle } from '../components/ui'
 import { Button, PageLayout, SwipeCard } from '../components/ui'
 import { useAssessment, useDictionary, useLanguage } from '../hooks'
 import { tProps } from '../i18n'
@@ -114,7 +114,7 @@ export function PracticeCardPage() {
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [responses, setResponses] = useState<CardResponse[]>([])
-  const [isAnimating, setIsAnimating] = useState(false)
+  const activeCardRef = useRef<SwipeCardHandle>(null)
 
   // Auto-pass: if no words, go back
   useEffect(() => {
@@ -141,7 +141,7 @@ export function PracticeCardPage() {
 
   const recordResponse = useCallback(
     (tier: MasteryTier) => {
-      if (isAnimating || currentIndex >= words.length) {
+      if (currentIndex >= words.length) {
         return
       }
       const word = words[currentIndex]
@@ -152,25 +152,58 @@ export function PracticeCardPage() {
       if (currentIndex >= words.length - 1) {
         finishDeck(newResponses)
       } else {
-        setIsAnimating(true)
-        setTimeout(() => {
-          setCurrentIndex(prev => prev + 1)
-          setIsAnimating(false)
-        }, 350)
+        setCurrentIndex(prev => prev + 1)
       }
     },
-    [isAnimating, currentIndex, words, responses, finishDeck]
+    [currentIndex, words, responses, finishDeck]
   )
 
-  const handleSaidIt = useCallback(() => {
+  const skipWord = useCallback(() => {
+    if (currentIndex >= words.length) {
+      return
+    }
+    if (currentIndex >= words.length - 1) {
+      finishDeck(responses)
+    } else {
+      setCurrentIndex(prev => prev + 1)
+    }
+  }, [currentIndex, words, responses, finishDeck])
+
+  // Swipe callbacks (invoked by hook after fly-off animation)
+  const handleSwipeRight = useCallback(() => {
     recordResponse('mastered')
   }, [recordResponse])
-  const handleNeededHelp = useCallback(() => {
-    recordResponse('emerging')
-  }, [recordResponse])
-  const handleNotYet = useCallback(() => {
+  const handleSwipeLeft = useCallback(() => {
     recordResponse('notStarted')
   }, [recordResponse])
+  const handleSwipeUp = useCallback(() => {
+    recordResponse('emerging')
+  }, [recordResponse])
+  const handleSwipeDown = useCallback(() => {
+    skipWord()
+  }, [skipWord])
+
+  // Button handlers (trigger fly-off animation via imperative handle)
+  const handleSaidItButton = useCallback(() => {
+    activeCardRef.current?.triggerSwipe('right')
+  }, [])
+  const handleNeededHelpButton = useCallback(() => {
+    activeCardRef.current?.triggerSwipe('up')
+  }, [])
+  const handleNotYetButton = useCallback(() => {
+    activeCardRef.current?.triggerSwipe('left')
+  }, [])
+
+  // Zone overlay labels
+  const zoneLabels = useMemo(
+    () => ({
+      right: t('saidIt'),
+      left: t('notYet'),
+      up: t('neededHelp'),
+      down: t('skip'),
+    }),
+    [t]
+  )
 
   const breadcrumbs: BreadcrumbItem[] = useMemo(
     () =>
@@ -207,10 +240,14 @@ export function PracticeCardPage() {
           .map((word, i) => (
             <SwipeCard
               key={word.id}
+              ref={i === 0 ? activeCardRef : undefined}
               isActive={i === 0}
               stackIndex={i}
-              onSwipeRight={handleSaidIt}
-              onSwipeLeft={handleNotYet}
+              onSwipeRight={handleSwipeRight}
+              onSwipeLeft={handleSwipeLeft}
+              onSwipeUp={handleSwipeUp}
+              onSwipeDown={handleSwipeDown}
+              zoneLabels={zoneLabels}
             >
               <PracticeCardContent word={word} prompt={training.practicePrompt} />
             </SwipeCard>
@@ -219,9 +256,9 @@ export function PracticeCardPage() {
       </div>
 
       <CardActions
-        onSaidIt={handleSaidIt}
-        onNeededHelp={handleNeededHelp}
-        onNotYet={handleNotYet}
+        onSaidIt={handleSaidItButton}
+        onNeededHelp={handleNeededHelpButton}
+        onNotYet={handleNotYetButton}
       />
     </PageLayout>
   )
