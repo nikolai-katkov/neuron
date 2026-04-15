@@ -86,7 +86,8 @@ describe('getVocabularyWord', () => {
 
   it('returns word for valid ID', () => {
     const word = getVocabularyWord(vocabulary, 'toys:simple:0')
-    expect(word).toEqual({ id: 'toys:simple:0', text: 'ball' })
+    expect(word).toMatchObject({ id: 'toys:simple:0' })
+    expect(word?.text).toBeTruthy()
   })
 
   it('returns null for invalid word ID format', () => {

@@ -38,3 +38,10 @@ cdk-outputs.json
 
 # Claude
 .claude/scheduled_tasks.lock
+
+# ARASAAC fetch script outputs
+scripts/image-review.html
+scripts/coverage-report.json
+
+# Vocabulary image variants (only canonical images are committed)
+src/public/images/vocabulary/*/*_*.png

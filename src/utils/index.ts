@@ -1,3 +1,4 @@
+export { getWordImageUrl, PLACEHOLDER_IMAGE_URL } from './getWordImageUrl'
 export {
   createInitialDictionaryState,
   createInitialState,

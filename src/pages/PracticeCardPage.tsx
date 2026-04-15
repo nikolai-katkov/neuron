@@ -9,6 +9,7 @@ import { tProps } from '../i18n'
 import { interpolate } from '../i18n/interpolate'
 import type { MasteryTier, VocabularyWord } from '../types'
 import { getOperantForSection } from '../types'
+import { getWordImageUrl, PLACEHOLDER_IMAGE_URL } from '../utils'
 import styles from './PracticeCardPage.module.css'
 
 interface CardResponse {
@@ -28,6 +29,27 @@ function DeckProgress({ current, total }: { current: number; total: number }) {
   )
 }
 
+function WordImage({ word }: { word: VocabularyWord }) {
+  const [failed, setFailed] = useState(false)
+  const src = failed ? PLACEHOLDER_IMAGE_URL : getWordImageUrl(word.id)
+
+  const handleError = useCallback(() => {
+    setFailed(true)
+  }, [])
+
+  return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- onError is for image load failure
+    <img
+      className={styles.wordImage}
+      src={src}
+      alt={word.text}
+      width={160}
+      height={160}
+      onError={handleError}
+    />
+  )
+}
+
 function PracticeCardContent({
   word,
   prompt,
@@ -44,6 +66,7 @@ function PracticeCardContent({
   return (
     <div className={styles.cardContent}>
       <div className={styles.wordArea}>
+        <WordImage word={word} />
         <span className={styles.wordText}>{word.text}</span>
       </div>
       <p className={styles.promptBrief}>{prompt.brief}</p>
