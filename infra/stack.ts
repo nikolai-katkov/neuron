@@ -62,12 +62,12 @@ export class MomAbaStack extends cdk.Stack {
     new cdk.aws_s3_deployment.BucketDeployment(this, 'DeploySite', {
       sources: [
         cdk.aws_s3_deployment.Source.asset('./dist', {
-          exclude: ['assets/video/*', 'images/**'],
+          exclude: ['assets/video/**', 'images/**'],
         }),
       ],
       destinationBucket: siteBucket,
       distribution,
-      distributionPaths: ['/index.html', '/assets/*.js', '/assets/*.css'],
+      distributionPaths: ['/*'],
     })
 
     new cdk.CfnOutput(this, 'SiteUrl', {
@@ -78,6 +78,11 @@ export class MomAbaStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'MediaBucketName', {
       value: mediaBucket.bucketName,
       description: 'S3 bucket for media assets (sync via aws s3 sync)',
+    })
+
+    new cdk.CfnOutput(this, 'DistributionId', {
+      value: distribution.distributionId,
+      description: 'CloudFront distribution ID (for cache invalidation)',
     })
   }
 }

@@ -42,6 +42,7 @@ cdk-outputs.json
 # ARASAAC fetch script outputs
 scripts/image-review.html
 scripts/coverage-report.json
+scripts/resolved-mappings.json
 
 # Vocabulary image variants (only canonical images are committed)
 src/public/images/vocabulary/*/*_*.png

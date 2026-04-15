@@ -1,3 +1,4 @@
+import { VOCABULARY_BY_LANGUAGE } from '../i18n/translations/vocabulary'
 import type { WordDifficulty } from './vocabulary'
 
 export type VerbalOperant = 'mand' | 'tact' | 'listenerResponding' | 'echoic'
@@ -47,7 +48,6 @@ export interface DictionaryState {
 export interface VocabularyWord {
   id: string
   text: string
-  imageUrl?: string
 }
 
 /** Everyday/mundane categories used for Tact Level 3 (non-preferred items). */
@@ -87,26 +87,34 @@ export function getLevelCategoryIds(levelId: string): string[] | null {
 
 // --- Word ID helpers ---
 
+function slugify(word: string): string {
+  return word
+    .toLowerCase()
+    .replace(/\s+/gu, '-')
+    .replace(/[^-0-9a-z]/gu, '')
+}
+
 export function getWordId(categoryId: string, difficulty: WordDifficulty, index: number): string {
-  return `${categoryId}:${difficulty}:${index}`
+  const enCategory = VOCABULARY_BY_LANGUAGE.en.find(c => c.id === categoryId)
+  const word = enCategory?.words[difficulty][index] ?? String(index)
+  return `${categoryId}/${difficulty}/${slugify(word)}`
 }
 
 export function parseWordId(
   wordId: string
-): { categoryId: string; difficulty: WordDifficulty; index: number } | null {
-  const parts = wordId.split(':')
+): { categoryId: string; difficulty: WordDifficulty; slug: string } | null {
+  const parts = wordId.split('/')
   if (parts.length !== 3) {
     return null
   }
 
-  const [categoryId, difficulty, indexStr] = parts
-  const index = Number(indexStr)
+  const [categoryId, difficulty, slug] = parts
 
-  if (!categoryId || !isWordDifficulty(difficulty) || Number.isNaN(index) || index < 0) {
+  if (!categoryId || !isWordDifficulty(difficulty) || !slug) {
     return null
   }
 
-  return { categoryId, difficulty, index }
+  return { categoryId, difficulty, slug }
 }
 
 function isWordDifficulty(value: string): value is WordDifficulty {

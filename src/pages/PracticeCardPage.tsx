@@ -12,11 +12,6 @@ import { getOperantForSection } from '../types'
 import { getWordImageUrl, PLACEHOLDER_IMAGE_URL } from '../utils'
 import styles from './PracticeCardPage.module.css'
 
-interface CardResponse {
-  wordId: string
-  tier: MasteryTier
-}
-
 function DeckProgress({ current, total }: { current: number; total: number }) {
   const { t } = useLanguage()
   return (
@@ -33,12 +28,16 @@ function WordImage({ word }: { word: VocabularyWord }) {
   const [failed, setFailed] = useState(false)
   const src = failed ? PLACEHOLDER_IMAGE_URL : getWordImageUrl(word.id)
 
+  useEffect(() => {
+    setFailed(false)
+  }, [word.id])
+
   const handleError = useCallback(() => {
     setFailed(true)
   }, [])
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- onError is for image load failure
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <img
       className={styles.wordImage}
       src={src}
@@ -136,7 +135,6 @@ export function PracticeCardPage() {
   }, [levelId, operant, getPracticeWords])
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [responses, setResponses] = useState<CardResponse[]>([])
   const activeCardRef = useRef<SwipeCardHandle>(null)
 
   // Auto-pass: if no words, go back
@@ -147,38 +145,31 @@ export function PracticeCardPage() {
     }
   }, [section, level, words.length, setLevelResult, navigate])
 
-  const finishDeck = useCallback(
-    (allResponses: CardResponse[]) => {
-      if (!operant || !section) {
-        return
-      }
-      for (const response of allResponses) {
-        if (response.tier !== 'notStarted') {
-          setWordMastery(response.wordId, operant, response.tier)
-        }
-      }
-      navigate(`/${section.id}/levels`, { replace: true })
-    },
-    [operant, section, setWordMastery, navigate]
-  )
+  const finishDeck = useCallback(() => {
+    if (!section) {
+      return
+    }
+    navigate(`/${section.id}/levels`, { replace: true })
+  }, [section, navigate])
 
   const recordResponse = useCallback(
     (tier: MasteryTier) => {
-      if (currentIndex >= words.length) {
+      if (currentIndex >= words.length || !operant) {
         return
       }
       const word = words[currentIndex]
-      const response: CardResponse = { wordId: word.id, tier }
-      const newResponses = [...responses, response]
-      setResponses(newResponses)
+
+      if (tier !== 'notStarted') {
+        setWordMastery(word.id, operant, tier)
+      }
 
       if (currentIndex >= words.length - 1) {
-        finishDeck(newResponses)
+        finishDeck()
       } else {
         setCurrentIndex(prev => prev + 1)
       }
     },
-    [currentIndex, words, responses, finishDeck]
+    [currentIndex, words, operant, setWordMastery, finishDeck]
   )
 
   const skipWord = useCallback(() => {
@@ -186,11 +177,11 @@ export function PracticeCardPage() {
       return
     }
     if (currentIndex >= words.length - 1) {
-      finishDeck(responses)
+      finishDeck()
     } else {
       setCurrentIndex(prev => prev + 1)
     }
-  }, [currentIndex, words, responses, finishDeck])
+  }, [currentIndex, words, finishDeck])
 
   // Swipe callbacks (invoked by hook after fly-off animation)
   const handleSwipeRight = useCallback(() => {

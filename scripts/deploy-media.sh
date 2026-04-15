@@ -7,12 +7,16 @@ set -euo pipefail
 PROFILE="mom-aba"
 STACK_NAME="MomAba"
 
-# Get media bucket name from CloudFormation outputs
-MEDIA_BUCKET=$(aws cloudformation describe-stacks \
-  --stack-name "$STACK_NAME" \
-  --query 'Stacks[0].Outputs[?OutputKey==`MediaBucketName`].OutputValue' \
-  --output text \
-  --profile "$PROFILE")
+get_output() {
+  aws cloudformation describe-stacks \
+    --stack-name "$STACK_NAME" \
+    --query "Stacks[0].Outputs[?OutputKey==\`$1\`].OutputValue" \
+    --output text \
+    --profile "$PROFILE"
+}
+
+MEDIA_BUCKET=$(get_output MediaBucketName)
+DISTRIBUTION_ID=$(get_output DistributionId)
 
 if [ -z "$MEDIA_BUCKET" ] || [ "$MEDIA_BUCKET" = "None" ]; then
   echo "Error: Could not find MediaBucketName output in stack $STACK_NAME"
@@ -20,6 +24,7 @@ if [ -z "$MEDIA_BUCKET" ] || [ "$MEDIA_BUCKET" = "None" ]; then
 fi
 
 echo "Media bucket: $MEDIA_BUCKET"
+SYNCED=false
 
 # Sync videos
 if [ -d "dist/assets/video" ]; then
@@ -27,7 +32,7 @@ if [ -d "dist/assets/video" ]; then
   aws s3 sync dist/assets/video/ "s3://$MEDIA_BUCKET/assets/video/" \
     --profile "$PROFILE" \
     --size-only
-  echo "Videos synced."
+  SYNCED=true
 fi
 
 # Sync vocabulary images
@@ -36,7 +41,22 @@ if [ -d "dist/images/vocabulary" ]; then
   aws s3 sync dist/images/vocabulary/ "s3://$MEDIA_BUCKET/images/vocabulary/" \
     --profile "$PROFILE" \
     --size-only
-  echo "Vocabulary images synced."
+  SYNCED=true
+fi
+
+if [ "$SYNCED" = false ]; then
+  echo "Warning: No media directories found in dist/. Nothing synced."
+  exit 0
+fi
+
+# Invalidate CloudFront cache for media paths
+if [ -n "$DISTRIBUTION_ID" ] && [ "$DISTRIBUTION_ID" != "None" ]; then
+  echo "Invalidating CloudFront cache for media paths..."
+  aws cloudfront create-invalidation \
+    --distribution-id "$DISTRIBUTION_ID" \
+    --paths "/images/*" "/assets/video/*" \
+    --profile "$PROFILE" \
+    --no-cli-pager
 fi
 
 echo "Media deployment complete."

@@ -12,39 +12,41 @@ import {
 
 describe('Word ID helpers', () => {
   describe('getWordId', () => {
-    it('produces category:difficulty:index format', () => {
-      expect(getWordId('toys', 'simple', 0)).toBe('toys:simple:0')
-      expect(getWordId('body-parts', 'complex', 5)).toBe('body-parts:complex:5')
+    it('produces category/difficulty/slug format', () => {
+      expect(getWordId('toys', 'simple', 0)).toBe('toys/simple/doll')
+      expect(getWordId('fruits', 'simple', 0)).toBe('fruits/simple/apple')
+    })
+
+    it('slugifies multi-word terms', () => {
+      expect(getWordId('toys', 'simple', 3)).toBe('toys/simple/teddy-bear')
     })
   })
 
   describe('parseWordId', () => {
     it('parses valid word IDs', () => {
-      expect(parseWordId('toys:simple:0')).toEqual({
+      expect(parseWordId('toys/simple/doll')).toEqual({
         categoryId: 'toys',
         difficulty: 'simple',
-        index: 0,
+        slug: 'doll',
       })
-      expect(parseWordId('body-parts:complex:5')).toEqual({
+      expect(parseWordId('body-parts/complex/wrist')).toEqual({
         categoryId: 'body-parts',
         difficulty: 'complex',
-        index: 5,
+        slug: 'wrist',
       })
     })
 
     it('returns null for invalid IDs', () => {
       expect(parseWordId('')).toBeNull()
       expect(parseWordId('toys')).toBeNull()
-      expect(parseWordId('toys:simple')).toBeNull()
-      expect(parseWordId('toys:invalid:0')).toBeNull()
-      expect(parseWordId('toys:simple:abc')).toBeNull()
-      expect(parseWordId('toys:simple:-1')).toBeNull()
+      expect(parseWordId('toys/simple')).toBeNull()
+      expect(parseWordId('toys/invalid/doll')).toBeNull()
     })
 
     it('round-trips with getWordId', () => {
-      const id = getWordId('fruits', 'medium', 3)
+      const id = getWordId('fruits', 'medium', 0)
       const parsed = parseWordId(id)
-      expect(parsed).toEqual({ categoryId: 'fruits', difficulty: 'medium', index: 3 })
+      expect(parsed).toEqual({ categoryId: 'fruits', difficulty: 'medium', slug: 'apricot' })
     })
   })
 })
@@ -85,9 +87,9 @@ describe('getVocabularyWord', () => {
   const vocabulary = VOCABULARY_BY_LANGUAGE.en
 
   it('returns word for valid ID', () => {
-    const word = getVocabularyWord(vocabulary, 'toys:simple:0')
-    expect(word).toMatchObject({ id: 'toys:simple:0' })
-    expect(word?.text).toBeTruthy()
+    const word = getVocabularyWord(vocabulary, 'toys/simple/doll')
+    expect(word).toMatchObject({ id: 'toys/simple/doll' })
+    expect(word?.text).toBe(vocabulary[0].words.simple[0])
   })
 
   it('returns null for invalid word ID format', () => {
@@ -96,10 +98,10 @@ describe('getVocabularyWord', () => {
   })
 
   it('returns null for non-existent category', () => {
-    expect(getVocabularyWord(vocabulary, 'nonexistent:simple:0')).toBeNull()
+    expect(getVocabularyWord(vocabulary, 'nonexistent/simple/doll')).toBeNull()
   })
 
-  it('returns null for out-of-bounds index', () => {
-    expect(getVocabularyWord(vocabulary, 'toys:simple:999')).toBeNull()
+  it('returns null for non-existent slug', () => {
+    expect(getVocabularyWord(vocabulary, 'toys/simple/nonexistent')).toBeNull()
   })
 })

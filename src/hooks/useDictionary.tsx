@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
+import { VOCABULARY_BY_LANGUAGE } from '../i18n/translations/vocabulary'
 import type {
   DictionaryState,
   MasteryRecord,
@@ -69,20 +70,32 @@ export function getVocabularyWord(
     return null
   }
 
+  // Find the index of this word in the English vocabulary (slug is English-based)
+  const enCategory = VOCABULARY_BY_LANGUAGE.en.find(c => c.id === parsed.categoryId)
+  if (!enCategory) {
+    return null
+  }
+
+  const enWords = enCategory.words[parsed.difficulty]
+  const index = enWords.findIndex(
+    w =>
+      w
+        .toLowerCase()
+        .replace(/\s+/gu, '-')
+        .replace(/[^-0-9a-z]/gu, '') === parsed.slug
+  )
+  if (index === -1) {
+    return null
+  }
+
+  // Return the localized text at the same index
   const category = vocabulary.find(c => c.id === parsed.categoryId)
-  if (!category) {
+  const text = category?.words[parsed.difficulty]?.[index]
+  if (!text) {
     return null
   }
 
-  const words = category.words[parsed.difficulty]
-  if (parsed.index < 0 || parsed.index >= words.length) {
-    return null
-  }
-
-  return {
-    id: wordId,
-    text: words[parsed.index],
-  }
+  return { id: wordId, text }
 }
 
 // --- Context ---

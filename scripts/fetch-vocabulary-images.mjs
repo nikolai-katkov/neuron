@@ -465,6 +465,7 @@ function generateReport(results) {
   console.log(`📋 Coverage report: ${REPORT_FILE}`)
 }
 
+
 // ---------------------------------------------------------------------------
 // Also apply previously resolved mappings
 // ---------------------------------------------------------------------------
@@ -552,6 +553,7 @@ async function singleWordMode(word, arasaacId) {
   saveResolved(resolved)
 
   console.log(`✓ ${foundCategory.id}/${slug}.png (ARASAAC #${id})`)
+
 }
 
 // ---------------------------------------------------------------------------
