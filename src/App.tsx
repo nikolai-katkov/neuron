@@ -11,6 +11,7 @@ import {
 } from './hooks'
 import { LanguageProvider } from './i18n'
 import { DictionaryPage } from './pages/DictionaryPage'
+import { ImageReviewPage } from './pages/ImageReviewPage/ImageReviewPage'
 import { LevelAssessmentPage } from './pages/LevelAssessmentPage'
 import { LevelsListPage } from './pages/LevelsListPage'
 import { MasteryGridPage } from './pages/MasteryGridPage'
@@ -35,23 +36,34 @@ function AppRoutes() {
   const { sections, vocabulary } = useLanguage()
 
   return (
-    <DictionaryProvider vocabulary={vocabulary}>
-      <OnboardingGate>
-        <AssessmentProvider sections={sections}>
-          <Routes>
-            <Route path="/" element={<SectionsListPage />} />
-            <Route path="/dictionary/:categoryId?" element={<DictionaryPage />} />
-            <Route path="/:sectionId" element={<SectionIntroPage />} />
-            <Route path="/:sectionId/levels" element={<LevelsListPage />} />
-            <Route path="/:sectionId/levels/:levelId" element={<LevelAssessmentPage />} />
-            <Route path="/:sectionId/levels/:levelId/mastery" element={<MasteryGridPage />} />
-            <Route path="/:sectionId/levels/:levelId/practice" element={<PracticeCardPage />} />
-            <Route path="/:sectionId/levels/:levelId/train" element={<TrainingPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AssessmentProvider>
-      </OnboardingGate>
-    </DictionaryProvider>
+    <Routes>
+      <Route path="/image-review" element={<ImageReviewPage />} />
+      <Route
+        path="*"
+        element={
+          <DictionaryProvider vocabulary={vocabulary}>
+            <OnboardingGate>
+              <AssessmentProvider sections={sections}>
+                <Routes>
+                  <Route path="/" element={<SectionsListPage />} />
+                  <Route path="/dictionary/:categoryId?" element={<DictionaryPage />} />
+                  <Route path="/:sectionId" element={<SectionIntroPage />} />
+                  <Route path="/:sectionId/levels" element={<LevelsListPage />} />
+                  <Route path="/:sectionId/levels/:levelId" element={<LevelAssessmentPage />} />
+                  <Route path="/:sectionId/levels/:levelId/mastery" element={<MasteryGridPage />} />
+                  <Route
+                    path="/:sectionId/levels/:levelId/practice"
+                    element={<PracticeCardPage />}
+                  />
+                  <Route path="/:sectionId/levels/:levelId/train" element={<TrainingPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </AssessmentProvider>
+            </OnboardingGate>
+          </DictionaryProvider>
+        }
+      />
+    </Routes>
   )
 }
 
