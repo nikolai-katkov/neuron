@@ -24,32 +24,14 @@ if [ -z "$MEDIA_BUCKET" ] || [ "$MEDIA_BUCKET" = "None" ]; then
 fi
 
 echo "Media bucket: $MEDIA_BUCKET"
-SYNCED=false
 
-# Sync videos (from source — not copied to dist)
-if [ -d "src/public/assets/video" ]; then
-  echo "Syncing videos..."
-  aws s3 sync src/public/assets/video/ "s3://$MEDIA_BUCKET/assets/video/" \
-    --profile "$PROFILE" \
-    --size-only
-  SYNCED=true
-fi
-
-# Sync vocabulary images (from source — not copied to dist)
-if [ -d "src/public/images/vocabulary" ]; then
-  echo "Syncing vocabulary images..."
-  aws s3 sync src/public/images/vocabulary/ "s3://$MEDIA_BUCKET/images/vocabulary/" \
-    --profile "$PROFILE" \
-    --size-only \
-    --exclude "*/.*" \
-    --exclude "LICENSE"
-  SYNCED=true
-fi
-
-if [ "$SYNCED" = false ]; then
-  echo "Warning: No media directories found in dist/. Nothing synced."
-  exit 0
-fi
+# Sync entire public dir to media bucket (images, videos, etc.)
+echo "Syncing src/public/ to media bucket..."
+aws s3 sync src/public/ "s3://$MEDIA_BUCKET/" \
+  --profile "$PROFILE" \
+  --size-only \
+  --exclude "*/.*" \
+  --exclude "LICENSE"
 
 # Invalidate CloudFront cache for media paths
 if [ -n "$DISTRIBUTION_ID" ] && [ "$DISTRIBUTION_ID" != "None" ]; then
